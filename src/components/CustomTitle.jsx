@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
-const CustomTitle = ({ title, interval, margin }) => {
+const CustomTitle = ({ title, margin, onAnimationEnd }) => {
     const [visibleText, setVisibleText] = useState('');
     const [isVisible, setIsVisible] = useState(false);
+    const [isAnimationFinished, setIsAnimationFinished] = useState(false);
     const levelClass = `text-2xl md:text-3xl lg:text-4xl xl:text-5xl`;
     const titleRef = useRef();
+
+    const titleSpring = useSpring({
+        opacity: isVisible ? 1 : 0,
+        marginTop: isVisible ? 0 : parseInt(margin, 10),
+        from: { opacity: 0, marginTop: parseInt(margin, 10) },
+    });
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -13,7 +21,6 @@ const CustomTitle = ({ title, interval, margin }) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
                     observer.disconnect();
-                    animateText(0);
                 }
             },
             {
@@ -34,33 +41,46 @@ const CustomTitle = ({ title, interval, margin }) => {
         };
     }, []);
 
+    useEffect(() => {
+        if (isVisible) {
+            animateText(0);
+        }
+    }, [isVisible]);
+
+    useEffect(() => {
+        if (isAnimationFinished && onAnimationEnd) {
+            onAnimationEnd();
+        }
+    }, [isAnimationFinished, onAnimationEnd]);
+
     const animateText = (index) => {
         if (index <= title.length) {
             setTimeout(() => {
                 setVisibleText(title.substring(0, index));
                 animateText(index + 1);
             }, 150);
+        } else {
+            setIsAnimationFinished(true);
         }
     };
 
     return (
-        <div ref={titleRef} className={`flex items-center mb-${margin}`}>
-            {isVisible && (
-                <>
-                    <span className={`text-green-600 ${levelClass}`}>logan@portfolio</span>
-                    <span className={`text-white ${levelClass}`}>:</span>
-                    <span className={`text-blue-600 ${levelClass}`}>~</span>
-                    <span className={`text-white ${levelClass}`}>$&nbsp;</span>
-                    <span className={`text-white ${levelClass}`}>{visibleText}</span>
-                </>
-            )}
-        </div>
+        <animated.div style={titleSpring}>
+            <div ref={titleRef} className={`flex items-center mb-2 mt-${margin}`}>
+                <span className={`text-green-600 ${levelClass}`}>logan@portfolio</span>
+                <span className={`text-white ${levelClass}`}>:</span>
+                <span className={`text-blue-600 ${levelClass}`}>~</span>
+                <span className={`text-white ${levelClass}`}>$&nbsp;</span>
+                <span className={`text-white ${levelClass}`}>{visibleText}</span>
+            </div>
+        </animated.div>
     );
 };
 
 CustomTitle.propTypes = {
     title: PropTypes.string.isRequired,
     margin: PropTypes.string.isRequired,
+    onAnimationEnd: PropTypes.func,
 };
 
 export default CustomTitle;

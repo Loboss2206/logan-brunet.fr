@@ -24,7 +24,7 @@ const Main = () => {
                         </motion.h1>
 
                         <motion.p className="flex text-white text-xl lg:text-3xl item">
-                            Student at Polytech Nice-Sophia interested in IT, AI, Cybersecurity, and Software Development.
+                            Student at Polytech Nice-Sophia in IT. Mainly interested in AI, Cybersecurity, and Software Development.
                         </motion.p>
 
                         <motion.p className="flex text-white text-xl lg:text-3xl item">
@@ -39,7 +39,7 @@ const Main = () => {
                         <img
                             src={profileImage}
                             alt="profile img"
-                            className="mx-auto max-w-2xl hover:scale-110 duration-500 rounded-full border-blue-800 border-4"
+                            className="mx-auto max-w-2xl hover:scale-110 duration-500 rounded-full border-green-800 border-4"
                         />
                     </motion.div>
                 </div>
