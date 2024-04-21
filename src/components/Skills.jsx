@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import CustomTitle from "./CustomTitle";
-import OS from "./OS";
+import OS from "./Skill";
 import p1 from "../assets/p1.png";
+import Skill from "./Skill";
 
 const Skills = () => {
     const [isFirstTitleAnimationComplete, setIsFirstTitleAnimationComplete] = useState(false);
@@ -67,6 +68,12 @@ const Skills = () => {
             link: "https://www.linux.org/",
             imageSrc: p1,
         },
+        {
+            id: 9,
+            title: "Linux 9",
+            link: "https://www.linux.org/",
+            imageSrc: p1,
+        }
     ];
 
     const tools = [
@@ -89,9 +96,9 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls Langages&Frameworks" margin="0" onAnimationEnd={() => setIsSecondTitleAnimationComplete(true)} />
                         {isSecondTitleAnimationComplete && (
-                            <div className="bg-green-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-8 gap-8 sm:px-0">
-                                {os.map(({ id, imageSrc, title, link }) => (
-                                    <OS key={id} imageSrc={imageSrc} link={link} title={title} />
+                            <div className="bg-green-800 bg-opacity-80 rounded-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0">
+                                {langages.map(({ id, imageSrc, title, link }) => (
+                                    <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}
                             </div>
                         )}
@@ -101,9 +108,9 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls OperatingSystems" margin="12" onAnimationEnd={() => setIsThirdTitleAnimationComplete(true)} />
                         {isThirdTitleAnimationComplete && (
-                            <div className="bg-green-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-8 gap-8 sm:px-0">
+                            <div className="bg-green-800 bg-opacity-80 rounded-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0">
                                 {os.map(({ id, imageSrc, title, link }) => (
-                                    <OS key={id} imageSrc={imageSrc} link={link} title={title} />
+                                    <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}
                             </div>
                         )}
@@ -113,9 +120,9 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls Tools" margin="12" onAnimationEnd={() => setIsFourthTitleAnimationComplete(true)} />
                         {isFourthTitleAnimationComplete && (
-                            <div className="bg-green-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-8 gap-8 sm:px-0">
-                                {os.map(({ id, imageSrc, title, link }) => (
-                                    <OS key={id} imageSrc={imageSrc} link={link} title={title} />
+                            <div className="bg-green-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0">
+                                {tools.map(({ id, imageSrc, title, link }) => (
+                                    <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}
                             </div>
                         )}

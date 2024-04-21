@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
+import { motion } from "framer-motion";
+
 
 const CustomTitle = ({ title, margin, onAnimationEnd }) => {
     const [visibleText, setVisibleText] = useState('');
@@ -66,13 +68,13 @@ const CustomTitle = ({ title, margin, onAnimationEnd }) => {
 
     return (
         <animated.div style={titleSpring}>
-            <div ref={titleRef} className={`flex items-center mb-2 mt-${margin}`}>
+            <motion.div ref={titleRef} className={`flex items-center mb-2`} style={{ marginTop: `${margin * 5}px` }}>
                 <span className={`text-green-600 ${levelClass}`}>logan@portfolio</span>
                 <span className={`text-white ${levelClass}`}>:</span>
                 <span className={`text-blue-600 ${levelClass}`}>~</span>
                 <span className={`text-white ${levelClass}`}>$&nbsp;</span>
                 <span className={`text-white ${levelClass}`}>{visibleText}</span>
-            </div>
+            </motion.div>
         </animated.div>
     );
 };

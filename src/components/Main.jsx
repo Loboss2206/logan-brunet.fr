@@ -1,12 +1,11 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import profileImage from "../assets/profile.jpeg";
 
 const Main = () => {
+    const text_important = "text-green-500 font-bold";
+
     return (
         <div
             name="Accueil"
@@ -20,18 +19,26 @@ const Main = () => {
                 <div className="flex justify-center md:flex-row flex-wrap-reverse md:flex-nowrap lg:items-center gap-10 mt-20 lg:mt-0">
                     <div className="flex flex-col gap-2">
                         <motion.h1 className="text-white lg:text-6xl text-3xl font-bold pb-2">
-                            Hello World! I'm{" "} <span className="text-green-500">Logan Brunet</span>,
+                            Hello World! I'm{" "}
+                            <span className={`${text_important}`}>Logan Brunet</span>,
                         </motion.h1>
 
                         <motion.p className="flex text-white text-xl lg:text-3xl item">
-                            Student at Polytech Nice-Sophia in IT. Mainly interested in AI, Cybersecurity, and Software Development.
+                            <i>
+                                Student at{" "}
+                                <span className={`${text_important}`}>Polytech Nice-Sophia</span> in IT. Mainly interested in{" "}
+                                <span className={`${text_important}`}>Cybersecurity</span>, and{" "}
+                                <span className={`${text_important}`}>Software Development</span>.
+                                I also enjoy traveling and exploring new technologies.{" "}
+                            </i>
                         </motion.p>
 
-                        <motion.p className="flex text-white text-xl lg:text-3xl item">
+                        <motion.p className="flex text-white text-xl lg:text-3xl item mt-8">
                             <i>
-                                I also enjoy traveling and exploring new technologies.{" "}
-                                <span className="text-green-500">test</span> quoi{" "}
-                                <span className="text-green-500">feur</span> quoicoubeh <span className="text-green-500">??</span> apanyaan <span className="text-green-500">wsh</span>.
+                                Currently seeking for an{" "}
+                                <span className={`${text_important}`}>apprenticeship</span> in one of those fields from{" "}
+                                <span className={`${text_important}`}>September 2024</span> to{" "}
+                                <span className={`${text_important}`}>September 2026</span>.
                             </i>
                         </motion.p>
                     </div>
@@ -39,7 +46,7 @@ const Main = () => {
                         <img
                             src={profileImage}
                             alt="profile img"
-                            className="mx-auto max-w-2xl hover:scale-110 duration-500 rounded-full border-green-800 border-4"
+                            className="mx-auto max-w-2xl hover:scale-110 duration-500 rounded-full border-green-800 border-4 hover:cursor-pointer"
                         />
                     </motion.div>
                 </div>
@@ -47,6 +54,5 @@ const Main = () => {
         </div>
     );
 };
-
 
 export default Main;

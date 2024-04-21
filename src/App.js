@@ -1,18 +1,20 @@
 import './tailwind.css';
 import './App.css';
+import Menu from './components/Menu';
 import Main from './components/Main';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import CustomTitle from './components/CustomTitle';
+import Education from './components/Education';
+
 
 function App() {
   return (
     <div className="App">
-      <p className='text-green-500'>PORTFOLIO</p>
+      <Menu />
       <Main />
-      <Skills />
       <Projects />
-      voir text
+      <Skills />
+      <Education />
     </div>
   );
 }
