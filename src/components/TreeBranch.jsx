@@ -12,24 +12,23 @@ const TreeBranch = ({ label, isLast, depth = 0, color = 'white', showPipe, empty
             )}
             {!empty && (
                 <>
-                    {firstPipe && (
-                        <div style={{ marginLeft: '0.37em' }} className="text-3xl my-0 text-white inline-block">
-                            {showPipe ? '|' : ' '}
+                    {depth >= 1 && (
+                        <div style={{ marginLeft: `0.37em` }} className="text-3xl my-0 text-white inline-block">
+                            {firstPipe ? '|' : '\u00A0'}
                         </div>
                     )}
-                    {secondPipe && (
+                    {depth >= 2 && (
                         <div style={{ marginLeft: `calc(${marginLeft} + 0.37em)` }} className="text-3xl my-0 text-white inline-block">
-                            {showPipe ? '|' : ' '}
+                            {secondPipe ? '|' : '\u00A0'}
                         </div>
                     )}
 
-                    <div style={firstPipe || secondPipe ? { marginLeft } : {}} className={`text-3xl my-0 ${textColorClass} inline-block`}>
+                    <div style={depth != 0 ? { marginLeft } : {}} className={`text-3xl my-0 ${textColorClass} inline-block`}>
                         <span className={`mr-2 text-white`}>
                             {isLast ? ' └─' : ' ├─'}
                         </span>
                         <span className={textColorClass}>{label}</span>
                     </div>
-
                 </>
             )
             };

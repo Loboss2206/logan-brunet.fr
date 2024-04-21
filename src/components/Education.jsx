@@ -47,9 +47,9 @@ const Education = () => {
                         <div key={id}>
                             {index === educationData.length - 1 && (
                                 <>
-                                    <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === educationData.length - 1} depth="0" color="blue" showPipe={false} />
-                                    <TreeBranch label={`${institution}`} firstPipe={true} secondPipe={true} depth="1" color="white" showPipe={false} />
-                                    <TreeBranch label={`${year}`} firstPipe={true} secondPipe={true} depth="1" color="white" showPipe={false} />
+                                    <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === educationData.length - 1} depth="0" color="blue" showPipe={true} />
+                                    <TreeBranch label={`${institution}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
+                                    <TreeBranch label={`${year}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
 
                                     {skills.length > 0 && (
                                         <>
@@ -71,18 +71,9 @@ const Education = () => {
 
                                     {skills.length > 0 && (
                                         <>
-                                            <TreeBranch label={`Skills`} firstPipe={true} secondPipe={false} isLast={false} depth="1" color="blue" showPipe={true} />
-                                            {skills.map((skill, skillIndex) => (
-                                                <TreeBranch key={skillIndex} label={`${skill}`} firstPipe={true} secondPipe={true} isLast={skillIndex === skills.length - 1} depth="2" color="white" showPipe={true} />
-                                            ))}
-                                        </>
-                                    )}
-
-                                    {skills.length > 0 && (
-                                        <>
                                             <TreeBranch label={`Skills`} firstPipe={true} secondPipe={false} isLast={true} depth="1" color="blue" showPipe={true} />
                                             {skills.map((skill, skillIndex) => (
-                                                <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} firstPipe={true} secondPipe={true} depth="2" color="white" showPipe={false} />
+                                                <TreeBranch key={skillIndex} label={`${skill}`} firstPipe={true} secondPipe={false} isLast={skillIndex === skills.length - 1} depth="2" color="white" showPipe={true} />
                                             ))}
                                         </>
                                     )}
