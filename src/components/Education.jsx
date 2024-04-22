@@ -28,8 +28,8 @@ const Education = () => {
                                 {index === education.length - 1 && (
                                     <>
                                         <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === education.length - 1} depth="0" color="blue" showPipe={true} />
-                                        <TreeBranch label={`${institution}`} firstPipe={false} secondPipe={false} depth="1" color="green" showPipe={false} />
-                                        <TreeBranch label={`${year}`} firstPipe={false} secondPipe={false} depth="1" color="red" showPipe={false} />
+                                        <TreeBranch label={`${institution}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
+                                        <TreeBranch label={`${year}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
 
                                         {skills.length > 0 && (
                                             <>
@@ -46,7 +46,7 @@ const Education = () => {
                                 {index !== education.length - 1 && (
                                     <>
                                         <TreeBranch label={`${degree}`} firstPipe={false} secondPipe={false} isLast={index === education.length - 1} depth="0" color="blue" showPipe={true} />
-                                        <TreeBranch label={`${institution}`} firstPipe={true} secondPipe={false} depth="1" color="violet" showPipe={true} />
+                                        <TreeBranch label={`${institution}`} firstPipe={true} secondPipe={false} depth="1" color="white" showPipe={true} />
                                         <TreeBranch label={`${year}`} firstPipe={true} secondPipe={false} depth="1" color="white" showPipe={true} />
 
                                         {skills.length > 0 && (
