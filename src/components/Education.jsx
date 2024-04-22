@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomTitle from "./CustomTitle";
 import TreeBranch from "./TreeBranch";
-import { MdJavascript } from "react-icons/md";
 
 const Education = () => {
     const educationData = [
@@ -41,19 +40,19 @@ const Education = () => {
             className="flex items-center min-h-screen w-full flex-col bg-gradient-to-r from-background-color to-container-bg px-5 pt-20"
         >
             <div className="flex flex-col w-full 2xl:w-2/3">
-                <CustomTitle title="tree ~/Education" margin="0" />
-                <div className=/*"bg-green-800 opacity-80*/ "p-4 rounded-md mt-4">
+                <CustomTitle title="tree ~/Education" margin="24" />
+                <div className="p-4 /*bg-green-800 opacity-80*/ rounded-md mt-4">
                     {educationData.map(({ id, institution, degree, year, skills }, index) => (
                         <div key={id}>
                             {index === educationData.length - 1 && (
                                 <>
-                                    <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === educationData.length - 1} depth="0" color="blue" showPipe={true} />
+                                    <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === educationData.length - 1} depth="0" color="green" showPipe={true} />
                                     <TreeBranch label={`${institution}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
                                     <TreeBranch label={`${year}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
 
                                     {skills.length > 0 && (
                                         <>
-                                            <TreeBranch label={`Skills`} isLast={true} depth="1" color="blue" showPipe={false} />
+                                            <TreeBranch label={`Skills`} isLast={true} depth="1" color="green" showPipe={false} />
                                             {skills.map((skill, skillIndex) => (
                                                 <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} depth="2" color="white" showPipe={false} />
                                             ))}

@@ -1,7 +1,7 @@
 // TreeBranch component
-const TreeBranch = ({ label, isLast, depth = 0, color = 'white', showPipe, empty, firstPipe, secondPipe }) => {
+const TreeBranch = ({ label, isLast, depth, color = 'white', showPipe, empty, firstPipe, secondPipe }) => {
     const marginLeft = `2em`;
-    const textColorClass = depth === 0 ? 'text-white' : (color === 'white' || color === 'black' ? `text-${color}` : `text-${color}-500`);
+    const textColorClass = ((color === 'white' || color === 'black' ? `text-${color}` : `text-${color}-500`));
 
     return (
         <div>

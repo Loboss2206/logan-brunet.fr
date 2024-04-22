@@ -91,7 +91,7 @@ const Skills = () => {
             className="flex items-center min-h-screen w-full flex-col bg-gradient-to-r from-background-color to-container-bg px-5 pt-20"
         >
             <div className="flex flex-col w-full 2xl:w-2/3">
-                <CustomTitle title="cd ~/Skills" margin="0" onAnimationEnd={() => setIsFirstTitleAnimationComplete(true)} />
+                <CustomTitle title="cd ~/Skills" margin="24" onAnimationEnd={() => setIsFirstTitleAnimationComplete(true)} />
                 {isFirstTitleAnimationComplete && (
                     <>
                         <CustomTitle title="ls Langages&Frameworks" margin="0" onAnimationEnd={() => setIsSecondTitleAnimationComplete(true)} />
