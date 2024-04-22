@@ -42,7 +42,7 @@ const Main = () => {
                             </i>
                         </motion.p>
                     </div>
-                    <motion.div className="item">
+                    <motion.div className="item hover:animate-spin">
                         <img
                             src={profileImage}
                             alt="profile img"

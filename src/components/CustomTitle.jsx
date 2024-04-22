@@ -68,7 +68,7 @@ const CustomTitle = ({ title, margin, onAnimationEnd }) => {
 
     return (
         <animated.div style={titleSpring}>
-            <motion.div ref={titleRef} className={`flex items-center mb-2`} style={{ marginTop: `${margin * 5}px` }}>
+            <motion.div ref={titleRef} className={`flex items-center mb-2`} style={{ marginTop: `${margin / 2}em` }}>
                 <span className={`text-green-600 ${levelClass}`}>logan@portfolio</span>
                 <span className={`text-white ${levelClass}`}>:</span>
                 <span className={`text-blue-600 ${levelClass}`}>~</span>
