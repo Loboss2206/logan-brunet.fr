@@ -23,44 +23,32 @@ const Education = () => {
                 <CustomTitle title="tree ~/Education" margin="12" onAnimationEnd={() => setIsTitleAnimationComplete(true)} />
                 {isTitleAnimationComplete && (
                     <div ref={educationRef} className="p-4 opacity-0 rounded-md mt-4">
-                        {education.map(({ id, institution, degree, year, skills }, index) => (
+                        {education.map(({ id, institution, degree, year, skills, specials }, index) => (
                             <div key={id}>
-                                {index === education.length - 1 && (
-                                    <>
-                                        <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === education.length - 1} depth="0" color="blue" showPipe={true} />
-                                        <TreeBranch label={`${institution}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
-                                        <TreeBranch label={`${year}`} firstPipe={false} secondPipe={false} depth="1" color="white" showPipe={false} />
+                                <>
+                                    <TreeBranch label={`${degree}`} firstPipe={true} secondPipe={true} isLast={index === education.length - 1} depth="0" color="blue" showPipe={true} />
+                                    <TreeBranch label={`${institution}`} firstPipe={index !== education.length - 1} secondPipe={false} depth="1" color="white" showPipe={false} />
+                                    <TreeBranch label={`${year}`} firstPipe={index !== education.length - 1} secondPipe={false} depth="1" color="white" showPipe={false} />
 
-                                        {skills.length > 0 && (
-                                            <>
-                                                <TreeBranch label={`Skills`} isLast={true} depth="1" color="blue" showPipe={false} />
-                                                {skills.map((skill, skillIndex) => (
-                                                    <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} depth="2" color="white" showPipe={false} />
-                                                ))}
-                                            </>
-                                        )}
+                                    {skills.length > 0 && (
+                                        <>
+                                            <TreeBranch label={`Skills`} firstPipe={index !== education.length - 1} isLast={false} depth="1" color="blue" showPipe={false} />
+                                            {skills.map((skill, skillIndex) => (
+                                                <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} firstPipe={index !== education.length - 1} secondPipe={true} depth="2" color="white" showPipe={false} />
+                                            ))}
+                                        </>
+                                    )}
 
-                                        <TreeBranch empty={true} showPipe={false} />
-                                    </>
-                                )}
-                                {index !== education.length - 1 && (
-                                    <>
-                                        <TreeBranch label={`${degree}`} firstPipe={false} secondPipe={false} isLast={index === education.length - 1} depth="0" color="blue" showPipe={true} />
-                                        <TreeBranch label={`${institution}`} firstPipe={true} secondPipe={false} depth="1" color="white" showPipe={true} />
-                                        <TreeBranch label={`${year}`} firstPipe={true} secondPipe={false} depth="1" color="white" showPipe={true} />
+                                    {specials.length > 0 && (
+                                        <>
+                                            {specials.map((special, specialIndex) => (
+                                                <TreeBranch key={specialIndex} label={`${special}`} firstPipe={index !== education.length - 1} secondPipe={false} isLast={specialIndex === specials.length - 1} depth="1" color="white" showPipe={true} />
+                                            ))}
+                                        </>
+                                    )}
 
-                                        {skills.length > 0 && (
-                                            <>
-                                                <TreeBranch label={`Skills`} firstPipe={true} secondPipe={false} isLast={true} depth="1" color="blue" showPipe={true} />
-                                                {skills.map((skill, skillIndex) => (
-                                                    <TreeBranch key={skillIndex} label={`${skill}`} firstPipe={true} secondPipe={false} isLast={skillIndex === skills.length - 1} depth="2" color="white" showPipe={true} />
-                                                ))}
-                                            </>
-                                        )}
-
-                                        <TreeBranch empty={true} showPipe={true} />
-                                    </>
-                                )}
+                                    <TreeBranch empty={true} showPipe={index !== education.length - 1} />
+                                </>
                             </div>
                         ))}
                     </div>

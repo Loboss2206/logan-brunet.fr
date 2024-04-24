@@ -26,8 +26,7 @@ const TreeBranch = ({ label, isLast, depth, color = 'white', showPipe, empty, fi
                         <span className={`mr-2 text-white`}>
                             {isLast ? ' └─' : ' ├─'}
                         </span>
-                        <span className={textColorClass}>{label}</span>
-                    </div>
+                        <span className={textColorClass}>{label}</span>                    </div>
                 </>
             )
             }

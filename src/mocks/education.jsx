@@ -7,9 +7,20 @@ const education = [
         skills: [
             "Github",
             "Java",
+            "Software architecture",
             "C",
+            "HTML",
+            "CSS",
+            "Typescript",
             "Angular",
-            "SQL"
+            "SQL",
+            "Artificial Intelligence",
+            "Android development",
+            "CI/CD",
+            "Networks",
+        ],
+        specials: [
+            "Profesionnal English Level (TOEIC 915)",
         ],
     },
     {
@@ -24,7 +35,12 @@ const education = [
             "HTML",
             "CSS",
             "Javascript",
-            "PHP"
+            "PHP",
+            "Docker",
+            "Spring",
+        ],
+        specials: [
+            "Intermediate English Level (TOEIC 805)",
         ],
     },
 ];
