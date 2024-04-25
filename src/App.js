@@ -1,25 +1,18 @@
 import './tailwind.css';
 import './App.css';
-import Menu from './components/Menu';
-import Main from './components/Main';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Interests from './components/Interests';
-import Footer from './components/Footer';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Menu />
-      <Main />
-      <Projects />
-      <Skills />
-      <Education />
-      <Interests />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -22,7 +22,7 @@ const Interests = () => {
         >
             <div className="flex flex-col w-full 2xl:w-2/3">
                 <CustomTitle title='find -name "*interests*"' margin="12" onAnimationEnd={() => setIsTitleAnimationComplete(true)} />
-                <div ref={interestsRef} className="flex items-center p-4 opacity-100 mt-4 inline relative /bg-indigo-500">
+                <div ref={interestsRef} className="flex items-center p-4 opacity-0 mt-4 inline relative /bg-indigo-500">
                     <div className="flex flex-col items-center mx-auto /bg-green-500">
                         <div className="flex items-center mx-2 /bg-green-500">
                             <img src={hinata} alt="Hinata" className="w-full /bg-pink-500"

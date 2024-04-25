@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-
-const CustomTitle = ({ title, margin, onAnimationEnd }) => {
+const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
     const [visibleText, setVisibleText] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const [isAnimationFinished, setIsAnimationFinished] = useState(false);
@@ -44,19 +43,22 @@ const CustomTitle = ({ title, margin, onAnimationEnd }) => {
     }, []);
 
     useEffect(() => {
-        if (isVisible) {
+        if (isVisible && animationActivated) {
             animateText(0);
+        } else if (!animationActivated) {
+            setVisibleText(title);
+            setIsAnimationFinished(true);
         }
-    }, [isVisible]);
+    }, [isVisible, animationActivated]);
 
     useEffect(() => {
-        if (isAnimationFinished && onAnimationEnd) {
+        if (isAnimationFinished) {
             onAnimationEnd();
         }
     }, [isAnimationFinished, onAnimationEnd]);
 
     const animateText = (index) => {
-        if (index <= title.length) {
+        if (index <= title.length && animationActivated) {
             setTimeout(() => {
                 setVisibleText(title.substring(0, index));
                 animateText(index + 1);
@@ -83,6 +85,11 @@ CustomTitle.propTypes = {
     title: PropTypes.string.isRequired,
     margin: PropTypes.string.isRequired,
     onAnimationEnd: PropTypes.func,
+    animationActivated: PropTypes.bool,
+};
+
+CustomTitle.defaultProps = {
+    animationActivated: true,
 };
 
 export default CustomTitle;
