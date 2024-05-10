@@ -24,3 +24,5 @@ yarn-error.log*
 
 # file of private key for sending mails
 *emailjs-id*
+
+text

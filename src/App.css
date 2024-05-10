@@ -56,3 +56,18 @@ body {
 .animate-swing-hover:hover {
   animation: swing 1s ease-in-out infinite;
 }
+
+@media (max-width: 767px) {
+  .menu-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .menu .fixed {
+    height: auto;
+  }
+
+  .menu>.fixed>.menu-container {
+    height: auto;
+  }
+}
