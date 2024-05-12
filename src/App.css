@@ -71,3 +71,25 @@ body {
     height: auto;
   }
 }
+
+.responsive-text {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (max-width: 425px) {
+  .responsive-text {
+    font-size: 7vw;
+  }
+}
+
+.responsive-text2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (max-width: 425px) {
+  .responsive-text2 {
+    font-size: 6vw;
+  }
+}
