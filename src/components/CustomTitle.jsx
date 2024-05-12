@@ -70,15 +70,24 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
 
     return (
         <animated.div style={titleSpring}>
-            <motion.div ref={titleRef} className={`flex items-center mb-2`} style={{ marginTop: `${margin / 2}em` }}>
-                <span className={`text-green-600 ${levelClass}`}>logan@portfolio</span>
-                <span className={`text-white ${levelClass}`}>:</span>
-                <span className={`text-blue-600 ${levelClass}`}>~</span>
-                <span className={`text-white ${levelClass}`}>$&nbsp;</span>
-                <span className={`text-white ${levelClass}`}>{visibleText}</span>
+            <motion.div
+                ref={titleRef}
+                className={`flex items-center mb-2`}
+                style={{ marginTop: `${margin / 2}em`, fontSize: '1.5rem', wordWrap: 'break-word' }}
+            >
+                <span className={`text-green-600 ${levelClass}`}>
+                    logan@portfolio
+                    <span className={`text-white ${levelClass}`}>:</span>
+                    <span className={`text-blue-600 ${levelClass}`}>~</span>
+                    <span className={`text-white ${levelClass}`}>$&nbsp;</span>
+                    <span className={`text-white ${levelClass}`}>{visibleText}</span>
+                </span>
+
             </motion.div>
         </animated.div>
     );
+
+
 };
 
 CustomTitle.propTypes = {
