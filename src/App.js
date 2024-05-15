@@ -7,11 +7,13 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <div class="background-portfolio">
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
