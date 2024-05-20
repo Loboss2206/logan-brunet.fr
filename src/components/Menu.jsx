@@ -12,12 +12,12 @@ const Menu = () => {
     return (
         <>
             <div className="menu fixed top-0 left-0 w-full z-50">
-                <div className="menu-container flex sm:items-center justify-between px-8 py-4 bg-emerald-900 bg-opacity-80 text-white md:px-16 md:pr-8">
-                    {/* base < sm < md < lg} */}
-                    <a href="#" className="order-1 flex mt-1 left-8">
-                        <p className={`responsive-text text-green-500 sm:text-red-500 md:text-yellow-500 lg:text-blue-500 font-bold`}>LOGAN BRUNET</p>
-                    </a>
-
+                <div className="menu-container flex flex-col md:flex-row md:items-center justify-between px-8 py-4 bg-emerald-900 bg-opacity-80 text-white">
+                    <div className="order-1 md:order-2 flex mt-2 md:mt-0 justify-center md:justify-start"> {/* Ajoutez cette div */}
+                        <a href="#">
+                            <p className={`responsive-text text-green-500 font-bold`}>LOGAN BRUNET</p>
+                        </a>
+                    </div>
 
 
                     <div className="md:hidden absolute right-6 flex-row-reverse md:order-2">
@@ -34,7 +34,7 @@ const Menu = () => {
                         </button>
                     </div>
 
-                    <nav className="hidden md:flex md:order-3 md:mt-2">
+                    <nav className="hidden md:flex md:order-1 md:mt-2">
                         <a href="about">
                             <p className={`animate-swing-hover text-white text-2xl font-bold px-4 py-2 duration-300 hover:scale-125`}>ABOUT</p>
                         </a>
@@ -80,7 +80,6 @@ const Menu = () => {
                     </div>
                 </div>
 
-                {/* Mobile menu */}
                 {isMobileMenuOpen && (
                     <div className="mobile-menu border-2 border-white/25 bg-emerald-900 rounded-b-2xl bg-opacity-95 text-white px-8 py-4 md:hidden flex flex-col items-center justify-center">
                         <nav className="flex space-x-4">
@@ -128,7 +127,7 @@ const Menu = () => {
                         </div>
                     </div>
                 )}
-            </div>
+            </div >
         </>
     );
 };
