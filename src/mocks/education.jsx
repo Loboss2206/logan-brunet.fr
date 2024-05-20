@@ -22,6 +22,9 @@ const education = [
         specials: [
             "Profesionnal English Level (TOEIC 915)",
         ],
+        specialsWithImage: [],
+        srcImage: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Logo_Reseau_Polytech.svg",
+        link: "https://polytech.univ-cotedazur.fr/"
     },
     {
         id: 2,
@@ -42,6 +45,16 @@ const education = [
         specials: [
             "Intermediate English Level (TOEIC 805)",
         ],
+        specialsWithImage: [
+            {
+                title: "3-month Internship as a DevOps at the Mediterranean Institute of ProtonTherapy in Nice.",
+                description: "Implementation of scripts designed to deploy containers on various operating systems, streamlining the continuous integration setup for the institute's software on these platforms.",
+                srcImage: "https://www.protontherapie.fr/wp-content/themes/impt/images/logo_antoine_lacassagne_unicancer.png",
+                link: "https://www.protontherapie.fr/"
+            },
+        ],
+        srcImage: "https://iut.univ-cotedazur.fr/uas/composante-iut/LOGO/logo-iut-couleur.png",
+        link: "https://iut.univ-cotedazur.fr/"
     },
 ];
 
