@@ -19,7 +19,7 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && animationActivated) {
                     setIsVisible(true);
                     observer.disconnect();
                 }
@@ -40,13 +40,14 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
                 observer.unobserve(titleRef.current);
             }
         };
-    }, []);
+    }, [animationActivated]);
 
     useEffect(() => {
         if (isVisible && animationActivated) {
             animateText(0);
         } else if (!animationActivated) {
             setVisibleText(title);
+            setIsVisible(true); // set isVisible to true here
             setIsAnimationFinished(true);
         }
     }, [isVisible, animationActivated]);
@@ -86,7 +87,6 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
             </motion.div>
         </animated.div>
     );
-
 
 };
 
