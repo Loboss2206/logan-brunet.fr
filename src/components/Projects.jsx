@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
 import Project from "./Project";
-import projectsMock from "../mocks/projects"
+import projectsMock from "../datas/projects"
 
 const Projects = () => {
     const [isTitleAnimationComplete, setIsTitleAnimationComplete] = useState(false);

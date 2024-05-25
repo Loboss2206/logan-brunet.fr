@@ -12,7 +12,7 @@ const os = [
     },
     {
         id: 2,
-        title: "macOs / IOS",
+        title: "macOS / IOS",
         link: "https://www.apple.com/",
         imageSrc: apple,
     },

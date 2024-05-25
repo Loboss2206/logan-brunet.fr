@@ -3,8 +3,10 @@ import github from "../assets/tools/github.svg";
 import gitlab from "../assets/tools/gitlab.svg";
 import vsc from "../assets/tools/vscode.svg";
 import intellij from "../assets/tools/intellij.svg";
-import android_studio from "../assets/tools/android_studio.svg";
-import notion from "../assets/tools/notion.svg";
+import android_studio from "../assets/tools/android-studio.png";
+import notion from "../assets/tools/notion.png";
+import postman from "../assets/tools/postman.svg";
+import docker from "../assets/tools/docker.svg";
 
 const tools = [
     {
@@ -42,14 +44,26 @@ const tools = [
         id: 6,
         title: "Android Studio",
         link: "https://developer.android.com/studio",
-        imageSrc: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png",
+        imageSrc: android_studio,
     },
     {
         id: 7,
         title: "Notion",
         link: "https://www.notion.so/",
-        imageSrc: "https://www.svgrepo.com/show/342071/notion.svg",
-    }
+        imageSrc: notion,
+    },
+    {
+        id: 8,
+        title: "Postman",
+        link: "https://www.postman.com/",
+        imageSrc: postman,
+    },
+    {
+        id: 9,
+        title: "Docker",
+        link: "https://www.docker.com/",
+        imageSrc: docker,
+    },
 ];
 
 export default tools;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
 import TreeBranch from "./TreeBranch";
-import educationMock from "../mocks/education";
+import educationMock from "../datas/education";
 import EducationBox from "./EducationBox";
 
 const Education = () => {

@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
 import Skill from "./Skill";
 
-import langagesMock from "../mocks/langages"
-import osMock from "../mocks/os"
-import toolsMock from "../mocks/tools"
+import langagesMock from "../datas/langages"
+import osMock from "../datas/os"
+import toolsMock from "../datas/tools"
 
 const Skills = () => {
     const [isFirstTitleAnimationComplete, setIsFirstTitleAnimationComplete] = useState(false);

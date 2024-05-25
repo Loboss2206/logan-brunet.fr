@@ -3,7 +3,7 @@ import c from "../assets/langages/c.svg";
 import cpp from "../assets/langages/cpp.svg";
 import python from "../assets/langages/python.svg";
 import plsql from "../assets/langages/plsql2.svg";
-import shell from "../assets/langages/shell.svg";
+import shell from "../assets/langages/shell.png";
 import html from "../assets/langages/html.svg";
 import css from "../assets/langages/css.svg";
 import js from "../assets/langages/js.svg";
