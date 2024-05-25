@@ -11,13 +11,15 @@ import Footer from '../components/Footer';
 function About() {
 
     return (
-        <div className="App">
+        <div className="App min-h-screen flex flex-col">
             <Menu />
-            <Main />
-            <Projects />
-            <Skills />
-            <Education />
-            <Interests />
+            <div className="flex-grow">
+                <Main />
+                <Projects />
+                <Skills />
+                <Education />
+                <Interests />
+            </div>
             <Footer />
         </div>
     );

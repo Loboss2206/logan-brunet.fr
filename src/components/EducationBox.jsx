@@ -37,14 +37,14 @@ const EducationBox = ({ degree, institution, year, skills, specials, specialsWit
                             {specialsWithImage.map((special, index) => (
                                 <div key={index} className="flex-inline items-center">
                                     <li className="font-semibold">{special.title}</li>
-                                    <a href={special.link} target="_blank" rel="noreferrer" className="hidden sm:flex pt-2">
+                                    <a href={special.link} target="_blank" rel="noreferrer" className="flex py-2">
                                         <img
                                             src={special.srcImage}
                                             alt={special.title}
                                             className="h-24 w-auto rounded-lg bg-gray-200 border-2 border-gray-400 p-2"
                                         />
                                     </a>
-                                    <p className="text-base text-white ml-2 sm:ml-0 py-2">{special.description}</p>
+                                    <p className="text-base text-white py-2">{special.description}</p>
                                 </div>
                             ))}
                         </ul>

@@ -7,7 +7,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <div class="background-portfolio">
+      <div className="background-portfolio">
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/contact" element={<Contact />} />

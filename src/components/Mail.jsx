@@ -31,15 +31,13 @@ const Mail = () => {
             name="Mail"
             className={`flex items-center w-full flex-col bg-gradient-to-r from-background-color to-container-bg px-5 pt-20`}
         >
-            <div className="flex flex-col w-full 2xl:w-2/3 flex-grow">
+            <div className="flex flex-col w-full 2xl:w-2/3 flex-grow p-4 mt-4">
                 <CustomTitle
                     title="nano new_mail"
                     margin="8"
                     animationActivated={false}
                     onAnimationEnd={() => { }}
                 />
-            </div>
-            <div className="flex flex-col w-full 2xl:w-2/3 flex-grow">
                 <form className="flex flex-col gap-1" onSubmit={handleClick}>
                     <label htmlFor="name" className="text-white text-2xl font-bold mt-4">Your Name</label>
                     <input type="text" placeholder="Ex: John" id="name" name="name" className="text-white p-4 rounded-lg bg-gray-800 focus:outline-none shadow-md shadow-gray-900" onChange={(e) => setName(e.target.value)} />

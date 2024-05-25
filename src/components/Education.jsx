@@ -12,14 +12,14 @@ const Education = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 768) { // Change the value 768 to the desired breakpoint
+            if (window.innerWidth < 768) {
                 setTitle("ls ~/Education");
             } else {
                 setTitle("tree ~/Education");
             }
         };
 
-        handleResize(); // Initial check
+        handleResize();
 
         window.addEventListener("resize", handleResize);
         return () => {
@@ -32,10 +32,6 @@ const Education = () => {
             educationRef.current.classList.add('fade-in');
         }
     }, [isTitleAnimationComplete]);
-
-    useEffect(() => {
-        console.log(title);
-    }, [title]);
 
     return (
         <div
@@ -57,8 +53,7 @@ const Education = () => {
                                         <>
                                             <TreeBranch label={`Skills`} firstPipe={index !== education.length - 1} isLast={false} depth="1" color="blue" showPipe={false} />
                                             {skills.map((skill, skillIndex) => (
-                                                <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} firstPipe={index !== education.length - 1} secondPipe={true} depth="2" color="white" showPipe={false} />
-                                            ))}
+                                                <TreeBranch key={skillIndex} label={`${skill}`} isLast={skillIndex === skills.length - 1} firstPipe={index !== education.length - 1} secondPipe={true} depth="2" color="white" showPipe={false} />))}
                                         </>
                                     )}
 
@@ -74,7 +69,7 @@ const Education = () => {
                                         <>
                                             {specialsWithImage.map((special, specialIndex) => (
                                                 <div>
-                                                    <TreeBranch key={specialIndex} label={`${special.title} ${special.description}`} firstPipe={index !== education.length - 1} secondPipe={false} isLast={specialIndex === specialsWithImage.length - 1} depth="1" color="white" showPipe={true} />
+                                                    <TreeBranch key={specialIndex} label={`${special.title}`} firstPipe={index !== education.length - 1} secondPipe={false} isLast={specialIndex === specialsWithImage.length - 1} depth="1" color="white" showPipe={true} />
                                                     <a href={special.link} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginLeft: '10em' }}>
                                                         <img src={special.srcImage} alt={special.title} className="h-36 rounded-lg bg-gray-200 border-4 border-gray-400 p-2" />
                                                     </a>
