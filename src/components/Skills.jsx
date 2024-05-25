@@ -51,7 +51,7 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls Langages&Frameworks" margin="0" onAnimationEnd={() => setIsSecondTitleAnimationComplete(true)} />
                         {isSecondTitleAnimationComplete && (
-                            <div ref={langagesRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0 p-4 mt-4">
+                            <div ref={langagesRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 sm:px-0 p-4 mt-4">
                                 {langages.map(({ id, imageSrc, title, link }) => (
                                     <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}
@@ -63,7 +63,7 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls OperatingSystems" margin="12" onAnimationEnd={() => setIsThirdTitleAnimationComplete(true)} />
                         {isThirdTitleAnimationComplete && (
-                            <div ref={osRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0 p-4 mt-4">
+                            <div ref={osRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 sm:px-0 p-4 mt-4">
                                 {os.map(({ id, imageSrc, title, link }) => (
                                     <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}
@@ -75,7 +75,7 @@ const Skills = () => {
                     <>
                         <CustomTitle title="ls Tools" margin="12" onAnimationEnd={() => setIsFourthTitleAnimationComplete(true)} />
                         {isFourthTitleAnimationComplete && (
-                            <div ref={toolsRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 sm:px-0 p-4 mt-4">
+                            <div ref={toolsRef} className="opacity-0 bg-gray-800/80 rounded-lg grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 sm:px-0 p-4 mt-4">
                                 {tools.map(({ id, imageSrc, title, link }) => (
                                     <Skill key={id} imageSrc={imageSrc} link={link} title={title} />
                                 ))}

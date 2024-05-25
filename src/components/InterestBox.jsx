@@ -8,11 +8,19 @@ const InterestBox = ({ title, description, srcImage, link }) => {
                 target="_blank"
                 rel="noreferrer"
             >
-                <img
-                    src={srcImage}
-                    alt={title}
-                    className="w-full h-full object-contain rounded-lg"
-                />
+                {title === "Volley-ball" ? (
+                    <img
+                        src={srcImage}
+                        alt={title}
+                        className="w-full h-full object-contain rounded-lg animate-spin"
+                    />
+                ) : (title === "Travelling" || title === "Japan") ? (
+                    <img
+                        src={srcImage}
+                        alt={title}
+                        className="w-full h-full object-cover rounded-lg animate-bounce"
+                    />
+                ) : null}
             </a>
             <div className="flex flex-col justify-center ml-4">
                 <h1 className="text-2xl font-semibold text-green-500">
