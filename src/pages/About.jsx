@@ -1,4 +1,3 @@
-import '../tailwind.css';
 import '../App.css';
 import Menu from '../components/Menu';
 import Main from '../components/Main';
