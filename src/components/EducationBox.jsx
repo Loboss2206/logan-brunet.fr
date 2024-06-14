@@ -2,7 +2,7 @@ import React from "react";
 
 const EducationBox = ({ degree, institution, year, skills, specials, specialsWithImage, srcImage, link }) => {
     return (
-        <div className="bg-gray-800/80 rounded-lg p-4 mb-6">
+        <div className="bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-lg p-4 mb-6">
             <a className="flex items-center justify-center" href={link} target="_blank" rel="noreferrer"><img src={srcImage} className="h-28 m-3 rounded-lg bg-gray-300 border-4 border-gray-400 p-2"></img></a>
             <h1 className="text-2xl font-semibold text-green-500">{institution}</h1>
             <p className="text-xl text-white">{degree}</p>

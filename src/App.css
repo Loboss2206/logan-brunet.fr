@@ -3,8 +3,8 @@ body {
   font-size: 14px;
 }
 
-.background-portfolio {
-  background-image: url("assets/wallpaper.jpg");
+.mobile-background {
+  background-color: red;
   background-size: fill;
   background-repeat: repeat;
   position: left top;
@@ -106,6 +106,13 @@ body {
   }
 }
 
+.tree-pipe {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: scaleY(1.7);
+}
+
+/* Hamburger Menu */
 .ham {
   width: 40px;
   cursor: pointer;
@@ -240,5 +247,203 @@ body {
 
   100% {
     transform: scale(1);
+  }
+}
+
+:root {
+  /** sunny side **/
+  --blue-background: #C2E9F6;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #f5eb71;
+  --yellow-border: #ece056;
+
+  /** dark side **/
+  --indigo-background: #808fc7;
+  --indigo-border: #5d6baa;
+  --indigo-color: #6b7abb;
+  --gray-border: #e8e8ea;
+  --gray-dots: #e8e8ea;
+
+  /** general **/
+  --white: #fff;
+}
+
+.toggle--checkbox {
+  display: none;
+}
+
+.toggle--checkbox:checked~.background {
+  background: var(--indigo-background);
+}
+
+.toggle--checkbox:checked+.toggle--label {
+  background: var(--indigo-color);
+  border-color: var(--indigo-border);
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background {
+  left: 30px;
+  width: 2.5px;
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background:before {
+  width: 2.5px;
+  height: 2.5px;
+  top: -12.5px;
+}
+
+.toggle--checkbox:checked+.toggle--label .toggle--label-background:after {
+  width: 2.5px;
+  height: 2.5px;
+  left: -15px;
+  top: 10px;
+}
+
+.toggle--checkbox:checked+.toggle--label:before {
+  background: var(--white);
+  border-color: var(--gray-border);
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+.toggle--checkbox:checked+.toggle--label:after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+
+.toggle--label {
+  width: 80px;
+  /* réduit de 100px à 80px */
+  height: 40px;
+  /* réduit de 50px à 40px */
+  background: var(--blue-color);
+  border-radius: 40px;
+  /* réduit de 50px à 40px */
+  border: 2.5px solid var(--blue-border);
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+}
+
+.toggle--label-background {
+  width: 4px;
+  /* réduit de 5px à 4px */
+  height: 2px;
+  border-radius: 2px;
+  position: relative;
+  background: var(--white);
+  left: 58.5px;
+  /* ajusté pour la nouvelle taille du bouton */
+  top: 18.5px;
+  /* ajusté pour la nouvelle taille du bouton */
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  width: 16px;
+  /* réduit de 20px à 16px */
+  height: 2px;
+  border-radius: 2px;
+  background: var(--white);
+  left: -8px;
+  /* réduit de 10px à 8px */
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 16px;
+  /* réduit de 20px à 16px */
+  height: 2px;
+  border-radius: 2px;
+  background: var(--white);
+  left: -4px;
+  /* réduit de 5px à 4px */
+  transition: all 150ms ease-in;
+}
+
+.toggle--label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  content: "";
+  width: 33px;
+  /* réduit de 41px à 33px */
+  height: 33px;
+  /* réduit de 41px à 33px */
+  border: 2.5px solid var(--yellow-border);
+  top: 1px;
+  /* ajusté pour la nouvelle taille du bouton */
+  left: 1px;
+  /* ajusté pour la nouvelle taille du bouton */
+  position: absolute;
+  border-radius: 33px;
+  /* réduit de 41px à 33px */
+  background: var(--yellow-background);
+}
+
+
+.toggle--label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: "";
+  box-shadow: var(--gray-dots) -6.5px 0 0 1px, var(--gray-dots) -12px 7px 0 -1px;
+  left: 71.5px;
+  top: 11.5px;
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes switch {
+  0% {
+    left: 1px;
+    /* ajusté pour la nouvelle taille du bouton */
+  }
+
+  60% {
+    left: 1px;
+    /* ajusté pour la nouvelle taille du bouton */
+    width: 49px;
+    /* réduit de 56px à 49px */
+  }
+
+  100% {
+    left: 42px;
+    /* réduit de 52px à 42px */
+    width: 33px;
+    /* réduit de 41px à 33px */
+  }
+}
+
+@keyframes reverse {
+  0% {
+    left: 42px;
+    /* réduit de 52px à 42px */
+    width: 33px;
+    /* réduit de 41px à 33px */
+  }
+
+  60% {
+    left: 27px;
+    /* réduit de 36px à 27px */
+    width: 49px;
+    /* réduit de 56px à 49px */
+  }
+
+  100% {
+    left: 1px;
+    /* ajusté pour la nouvelle taille du bouton */
   }
 }

@@ -70,7 +70,7 @@ const Education = () => {
                                             {specialsWithImage.map((special, specialIndex) => (
                                                 <div>
                                                     <TreeBranch key={specialIndex} label={`${special.title}`} firstPipe={index !== education.length - 1} secondPipe={false} isLast={specialIndex === specialsWithImage.length - 1} depth="1" color="white" showPipe={true} />
-                                                    <a href={special.link} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginLeft: '10em' }}>
+                                                    <a href={special.link} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginLeft: '5.7em', marginTop: '0.5vw' }}>
                                                         <img src={special.srcImage} alt={special.title} className="h-36 rounded-lg bg-gray-200 border-4 border-gray-400 p-2" />
                                                     </a>
                                                 </div>

@@ -69,6 +69,8 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
         }
     };
 
+    const text = 'text-black dark:text-white';
+
     return (
         <animated.div style={titleSpring}>
             <motion.div
@@ -76,12 +78,12 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
                 className={`flex items-center mb-2`}
                 style={{ marginTop: `${margin / 2}em`, fontSize: '1.5rem', wordWrap: 'break-word' }}
             >
-                <span className={`text-green-600 ${levelClass}`}>
+                <span className={`text-green-600 font-medium dark:font-normal ${levelClass}`}>
                     logan@portfolio
-                    <span className={`text-white ${levelClass}`}>:</span>
-                    <span className={`text-blue-600 ${levelClass}`}>~</span>
-                    <span className={`text-white ${levelClass}`}>$&nbsp;</span>
-                    <span className={`text-white ${levelClass}`}>{visibleText}</span>
+                    <span className={`${text} font-medium dark:font-normal ${levelClass}`}>:</span>
+                    <span className={`text-blue-600 font-medium dark:font-normal ${levelClass}`}>~</span>
+                    <span className={`${text} font-medium dark:font-normal ${levelClass}`}>$&nbsp;</span>
+                    <span className={`${text} font-medium dark:font-normal ${levelClass}`}>{visibleText}</span>
                 </span>
 
             </motion.div>
