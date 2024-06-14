@@ -30,7 +30,7 @@ const Projects = () => {
                         ref={projectsRef}
                         className="opacity-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-0 p-4 mt-4"
                     >
-                        {projects.map(({ id, imageSrc, date, title, description, link }) => (
+                        {projects.map(({ id, imageSrc, date, title, description, link, tags }) => (
                             <Project
                                 key={id}
                                 imageSrc={imageSrc}
@@ -38,6 +38,7 @@ const Projects = () => {
                                 title={title}
                                 description={description}
                                 link={link}
+                                tags={tags}
                             />
                         ))}
                     </div>

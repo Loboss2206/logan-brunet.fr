@@ -53,6 +53,7 @@ const education = [
                 link: "https://www.protontherapie.fr/"
             },
         ],
+
         srcImage: "https://iut.univ-cotedazur.fr/uas/composante-iut/LOGO/logo-iut-couleur.png",
         link: "https://iut.univ-cotedazur.fr/"
     },
