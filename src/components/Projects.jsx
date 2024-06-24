@@ -24,6 +24,7 @@ const Projects = () => {
                     title="ls ~/Projects"
                     margin="8"
                     onAnimationEnd={() => setIsTitleAnimationComplete(true)}
+                    animationActivated={false}
                 />
                 {isTitleAnimationComplete && (
                     <div
@@ -33,6 +34,7 @@ const Projects = () => {
                         {projects.map(({ id, imageSrc, date, title, description, link, tags }) => (
                             <Project
                                 key={id}
+                                id={id}
                                 imageSrc={imageSrc}
                                 date={date}
                                 title={title}
@@ -40,7 +42,8 @@ const Projects = () => {
                                 link={link}
                                 tags={tags}
                             />
-                        ))}
+                        )).filter((project) => project.props.id > 0)
+                            .sort((a, b) => (a.props.id > b.props.id) ? -1 : 1)}
                     </div>
                 )}
             </div>

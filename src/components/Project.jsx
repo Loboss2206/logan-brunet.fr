@@ -2,30 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tag from './Tag';
 
-const Project = ({ imageSrc, date, title, description, link, tags }) => {
+const Project = ({ id, imageSrc, date, title, description, link, tags }) => {
+
+    const lengthenText = (e) => {
+        e.preventDefault();
+        const text = document.getElementById(id);
+        text.classList.toggle('limit7lines');
+    }
+
     return (
-        <a href={(link === undefined) ? '#' : link}><div className="relative overflow-hidden bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-md transition-transform transform hover:scale-105 /*h-108 p-3">
-            <div className="absolute inset-0 rounded-md"></div>
-            <img src={imageSrc} alt="Project3" className="h-44 w-auto rounded-md mb-2 mx-auto" />
-            <div className="p-2 relative z-10">
-                <p className="text-white ">Date: {date}</p>
-                <h3 className="text-green-500 text-2xl font-bold mb-2">{title}</h3>
-                <p className="text-white limit7lines">{description}</p>
-                <div className="flex flex-wrap gap-2 justify-end bottom-0 right-0 p-4">
+        <a target="_blank" rel="noreferrer" href={(link === undefined) ? '#' : link}>
+            <div className="relative overflow-hidden bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-md transition-transform transform hover:scale-105 h-full p-3 flex flex-col">
+                <div className="absolute inset-0 rounded-md"></div>
+                <img src={imageSrc} alt="Project3" className="h-44 w-auto rounded-md mb-2 mx-auto" />
+                <div className="p-2 relative z-10">
+                    <p className="text-white text-base">Date : {date}</p>
+                    <h3 className="text-green-500 text-2xl font-bold mb-2">{title}</h3>
+                    <p id={id} className={`text-white limit7lines z-10 hover:cursor-pointer`} onClick={lengthenText}>{description}</p>
+                </div>
+                <div className="flex flex-wrap-reverse gap-2 justify-end p-4 mt-auto">
                     {tags.map(({ tagName, tagImage }) => (
                         <Tag key={tagName} tagName={tagName} tagImage={tagImage} />
                     ))}
                 </div>
             </div>
-        </div></a>
+        </a>
     );
 };
 
 Project.propTypes = {
+    id: PropTypes.string.isRequired,
     imageSrc: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    link: PropTypes.string,
     tags: PropTypes.arrayOf(
         PropTypes.shape({
             tagName: PropTypes.string.isRequired,
