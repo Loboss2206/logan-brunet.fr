@@ -3,14 +3,6 @@ body {
   font-size: 14px;
 }
 
-.mobile-background {
-  background-color: red;
-  background-size: fill;
-  background-repeat: repeat;
-  position: left top;
-  background-attachment: fixed;
-}
-
 .limit7lines {
   overflow: hidden;
   text-overflow: ellipsis;

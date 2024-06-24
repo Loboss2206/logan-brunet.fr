@@ -27,7 +27,7 @@ function App() {
     return false;
   }
 
-  const backgroundClassName = `bg-[url('assets/white-wallpaper.jpg')] dark:bg-[url('assets/wallpaper.jpg')] ${isMobile() ? 'mobile-background' : 'bg-cover bg-fixed bg-center'}`;
+  const backgroundClassName = `${isMobile() ? 'bg-[url("assets/phone-white-wallpaper.jpg")] dark:bg-[url("assets/phone-dark-wallpaper.jpg")] bg-left-top bg-repeat bg-fixed' : 'bg-[url("assets/white-wallpaper.jpg")] dark:bg-[url("assets/dark-wallpaper.jpg")] bg-cover bg-fixed bg-center'}`;
 
   return (
     <Router>
