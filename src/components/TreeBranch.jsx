@@ -5,25 +5,25 @@ const TreeBranch = ({ label, isLast, depth, color = 'white', showPipe, empty, fi
     return (
         <div className="flex flex-row items-center">
             {empty && (
-                <div style={{ marginLeft: '0.38em' }} className="text-3xl my-0 text-black dark:text-white inline-block">
+                <div style={{ marginLeft: '0.37em' }} className="text-3xl my-0 text-black dark:text-white inline-block">
                     {showPipe ? <span className="tree-pipe">|</span> : ' '}
                 </div>
             )}
             {!empty && (
                 <>
                     {depth >= 1 && (
-                        <div style={{ marginLeft: `0.38em` }} className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap">
+                        <div style={{ marginLeft: `0.37em` }} className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap">
                             {firstPipe ? <span className="tree-pipe">|</span> : '\u00A0'}
                         </div>
                     )}
                     {depth >= 2 && (
-                        <div style={{ marginLeft: `calc(${marginLeft} + 0.38em)` }} className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap">
+                        <div style={{ marginLeft: `calc(${marginLeft} + 0.37em)` }} className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap">
                             {secondPipe ? <span className="tree-pipe">|</span> : '\u00A0'}
                         </div>
                     )}
 
                     <div style={depth != 0 ? { marginLeft } : {}} className={`text-3xl my-0 ${textColorClass} inline-block`}>
-                        <span style={{ marginLeft: `0.19em` }} className={`mr-2 text-black dark:text-white whitespace-nowrap`}>
+                        <span className={`mr-2 text-black dark:text-white whitespace-nowrap`}>
                             {isLast ? '└─' : '├─'}
                         </span>
                         <span className={`${textColorClass} word-wrap-break-word`}>{label}</span>

@@ -68,7 +68,7 @@ const Menu = () => {
                     </div>
 
 
-                    <div className="md2:hidden absolute right-6 flex-row-reverse md2:order-2 mt-4">
+                    <div style={{ marginTop: `1.125rem` }} className="md2:hidden absolute right-6 flex-row-reverse md2:order-2">
                         <button onClick={toggleMobileMenu} className={`focus:outline-none p-2 ${isActive ? "active" : "not-active"} ham`}>
                             <span className="lineMenu"></span>
                             <span className="lineMenu"></span>
@@ -140,10 +140,10 @@ const Menu = () => {
                     <div className="mobile-menu border-2 border-white/25 bg-emerald-900 bg-opacity-90 dark:bg-opacity-80 rounded-b-2xl text-white px-8 py-4 md2:hidden flex flex-col items-center justify-center">
                         <nav className="flex space-x-4">
                             <a href="about">
-                                <p className={`text-white responsive-text2 font-bold`}>ABOUT</p>
+                                <p className={`animate-swing-hover text-white responsive-text2 font-bold`}>ABOUT</p>
                             </a>
                             <a href="contact">
-                                <p className={`text-white responsive-text2 font-bold`}>CONTACT</p>
+                                <p className={`animate-swing-hover text-white responsive-text2 font-bold`}>CONTACT</p>
                             </a>
                         </nav>
                         <div id="icons" className="flex space-x-4 mt-4">

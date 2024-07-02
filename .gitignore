@@ -17,12 +17,14 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# file of private key for sending mails
+# files of private datas for sending mails
 *emailjs-id*
 
-text
+# files of webstorm
+.idea

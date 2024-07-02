@@ -28,6 +28,8 @@ import vite from "../assets/tools/vite.svg";
 import python from "../assets/langages/python.svg";
 import ia from "../assets/ia.png";
 import apache from "../assets/tools/apache.svg";
+import docker from "../assets/tools/docker.svg"
+import playwright from "../assets/tools/playwright.png"
 
 const tags = {
     "java": {
@@ -105,6 +107,14 @@ const tags = {
     "apache": {
         tagName: "Apache",
         tagImage: apache
+    },
+    "docker": {
+        tagName: "Docker",
+        tagImage: docker
+    },
+    "playwright": {
+        tagName: "Playwright",
+        tagImage: playwright
     }
 };
 
@@ -207,7 +217,7 @@ const projects = [
         description:
             "This project was done for the PS6 course at Polytech Nice-Sophia University. The goal was to create a website to help people with the Alzheimer's disease by providing them the possibility to play a quiz (and 2 other surprise games) to stimulate their memory.",
         imageSrc: klamar,
-        tags: [tags["angular"], tags["typescript"], tags["javascript"], tags["git"], tags["html"], tags["sass"]]
+        tags: [tags["angular"], tags["typescript"], tags["javascript"], tags["git"], tags["html"], tags["sass"], tags["docker"], tags["playwright"]]
     },
 ];
 
