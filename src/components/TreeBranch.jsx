@@ -1,6 +1,15 @@
 const TreeBranch = ({ label, isLast, depth, color = 'white', showPipe, empty, firstPipe, secondPipe }) => {
     const marginLeft = `2em`;
-    let textColorClass = ((color === 'white' ? `text-black dark:text-white` : color === 'black' ? `text-black dark:text-black` : `font-medium text-${color}-700 dark:text-${color}-600`));
+
+    const colorClassMap = {
+        white: 'text-black dark:text-white',
+        black: 'text-black dark:text-black',
+        blue: 'font-medium text-blue-700 dark:text-blue-600',
+        red: 'font-medium text-red-700 dark:text-red-600',
+        green: 'font-medium text-green-700 dark:text-green-600',
+      };
+
+    const textColorClass = colorClassMap[color] || 'font-medium text-gray-700 dark:text-gray-600';
 
     return (
         <div className="flex flex-row items-center">

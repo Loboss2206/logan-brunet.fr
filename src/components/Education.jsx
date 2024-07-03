@@ -6,7 +6,7 @@ import EducationBox from "./EducationBox";
 
 const Education = () => {
     const [isTitleAnimationComplete, setIsTitleAnimationComplete] = useState(false);
-    const [title, setTitle] = useState(""); // Added state for the title
+    const [title, setTitle] = useState("");
     const education = educationMock;
     const educationRef = useRef(null);
 
@@ -82,7 +82,7 @@ const Education = () => {
                                 </>
                             </div>
                         ))}
-                        {education.map(({ id, institution, degree, year, skills, specials, specialsWithImage, srcImage, link }, index) => (
+                        {education.map(({ id, institution, degree, year, skills, specials, specialsWithImage, srcImage, link }) => (
                             <div className="md:hidden" key={id}>
                                 <EducationBox degree={degree} institution={institution} year={year} skills={skills} specials={specials} specialsWithImage={specialsWithImage} srcImage={srcImage} link={link} />
                             </div>

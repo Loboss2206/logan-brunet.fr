@@ -27,7 +27,7 @@ const Main = () => {
                         <motion.p className="flex text-black dark:text-white text-xl lg:text-3xl item">
                             <i>
                                 Student at{" "}
-                                <span className={`${text_important}`}>Polytech Nice-Sophia</span> in IT. Mainly interested in{" "}
+                                <span className={`${text_important}`}>Polytech Nice-Sophia</span> in Computer Science. Mainly interested in{" "}
                                 <span className={`${text_important}`}>Cybersecurity</span>, and{" "}
                                 <span className={`${text_important}`}>Software Development</span>.
                                 I also enjoy traveling and exploring new technologies.{" "}

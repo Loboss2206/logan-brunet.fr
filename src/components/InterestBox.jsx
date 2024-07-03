@@ -12,19 +12,19 @@ const InterestBox = ({ title, description, srcImage, link }) => {
                     <img
                         src={srcImage}
                         alt={title}
-                        className="w-full h-full object-contain rounded-lg animate-spin"
+                        className="w-full h-full object-contain rounded-lg animate-spin mx-auto"
                     />
                 ) : (title === "Travelling") ? (
                     <img
                         src={srcImage}
                         alt={title}
-                        className="w-full h-full object-cover rounded-lg animate-bounce mt-4"
+                        className="w-full h-full object-cover rounded-lg animate-bounce mt-4 mx-auto"
                     />
                 ) : (title === "Japan") ? (
                     <img
                         src={srcImage}
                         alt={title}
-                        className="w-20 h-20 object-cover rounded-lg animate-bounce mt-4"
+                        className="w-20 h-20 object-cover rounded-lg animate-bounce mt-4 mx-auto"
                     />
                 ) : null}
             </a>
