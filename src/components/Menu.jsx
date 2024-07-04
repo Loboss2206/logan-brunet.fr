@@ -3,7 +3,6 @@ import React, { useState, useEffect, useCallback } from "react";
 const Menu = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  console.log(typeof localStorage.getItem("darkMode"));
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.getItem("darkMode") === "true"
   );
@@ -11,20 +10,13 @@ const Menu = () => {
   const toggleMobileMenu = () => {
     setIsActive(!isActive);
     setTimeout(() => setMobileMenuOpen(!isActive), 500);
-    console.log(isActive);
   };
 
   const toggleTheme = () => {
-    console.log("isDarkThemeBefore : " + isDarkTheme);
     const newDarkMode = !isDarkTheme;
     setIsDarkTheme(newDarkMode);
-    console.log("isDarkThemeAfter : " + typeof newDarkMode);
 
-    console.log(
-      "storageBefore : " + localStorage.getItem("darkMode") === "true"
-    );
     localStorage.setItem("darkMode", newDarkMode);
-    console.log("storageBefore : " + localStorage.getItem("darkMode"));
 
     const html = document.querySelector("html");
     html.classList.toggle("dark", newDarkMode);
