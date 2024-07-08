@@ -43,31 +43,31 @@ const Mail = () => {
     const captchaValue = recaptcha.current.getValue();
 
     if (name === "") {
-      setAlertMessage("Vous n'avez pas entré de nom !");
+      setAlertMessage("You didn't enter a name!");
       setAlertType("error");
       return;
     }
 
     if (email === "") {
-      setAlertMessage("Vous n'avez pas entré d'email !");
+      setAlertMessage("You didn't enter an email!");
       setAlertType("error");
       return;
     }
 
     if (message === "") {
-      setAlertMessage("Vous n'avez pas entré de message !");
+      setAlertMessage("You didn't enter a message!");
       setAlertType("error");
       return;
     }
 
     if (!emailRegex.test(email)) {
-      setAlertMessage("Veuillez entrer une adresse email valide !");
+      setAlertMessage("Please enter a valid email!");
       setAlertType("error");
       return;
     }
 
     if (!captchaValue) {
-      setAlertMessage("Vérifiez le reCAPTCHA s'il vous plaît !");
+      setAlertMessage("Please verify the reCAPTCHA!");
       setAlertType("error");
       return;
     }
@@ -81,11 +81,11 @@ const Mail = () => {
         templateParams,
         emailUserId
       );
-      setAlertMessage("Email envoyé !");
+      setAlertMessage("Email sent!");
       setAlertType("success");
     } catch (error) {
       console.error(error);
-      setAlertMessage("Erreur durant l'envoi du mail");
+      setAlertMessage("Error sending email");
       setAlertType("error");
     } finally {
       setIsSending(false);
