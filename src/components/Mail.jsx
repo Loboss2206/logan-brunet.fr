@@ -4,6 +4,7 @@ import CustomTitle from "./CustomTitle";
 import { emailServiceId, emailTemplateId, emailUserId } from "../emailjs-id";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FadeLoader } from "react-spinners";
+import Alert from "./Alert";
 
 const Mail = () => {
   const [name, setName] = useState("");
@@ -11,13 +12,13 @@ const Mail = () => {
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+  const [alertType, setAlertType] = useState("");
   const recaptcha = useRef();
   const siteKey = import.meta.env.VITE_SITE_KEY;
 
   useEffect(() => {
     if (alertMessage) {
-      alert(alertMessage);
-      setAlertMessage("");
+      setTimeout(() => setAlertMessage(""), 3000);
     }
   }, [alertMessage]);
 
@@ -41,13 +42,33 @@ const Mail = () => {
 
     const captchaValue = recaptcha.current.getValue();
 
-    if (!captchaValue) {
-      alert("Vérifiez le reCAPTCHA s'il vous plaît !");
+    if (name === "") {
+      setAlertMessage("Vous n'avez pas entré de nom !");
+      setAlertType("error");
+      return;
+    }
+
+    if (email === "") {
+      setAlertMessage("Vous n'avez pas entré d'email !");
+      setAlertType("error");
+      return;
+    }
+
+    if (message === "") {
+      setAlertMessage("Vous n'avez pas entré de message !");
+      setAlertType("error");
       return;
     }
 
     if (!emailRegex.test(email)) {
-      alert("Veuillez entrer une adresse email valide !");
+      setAlertMessage("Veuillez entrer une adresse email valide !");
+      setAlertType("error");
+      return;
+    }
+
+    if (!captchaValue) {
+      setAlertMessage("Vérifiez le reCAPTCHA s'il vous plaît !");
+      setAlertType("error");
       return;
     }
 
@@ -61,9 +82,11 @@ const Mail = () => {
         emailUserId
       );
       setAlertMessage("Email envoyé !");
+      setAlertType("success");
     } catch (error) {
       console.error(error);
       setAlertMessage("Erreur durant l'envoi du mail");
+      setAlertType("error");
     } finally {
       setIsSending(false);
     }
@@ -72,15 +95,16 @@ const Mail = () => {
   return (
     <div
       name="Mail"
-      className={`flex items-center w-full flex-col bg-gradient-to-r from-background-color to-container-bg px-5 pt-20`}
+      className="flex items-center w-full flex-col bg-gradient-to-r from-background-color to-container-bg px-5 pt-20"
     >
-      <div
-        className={`flex h-screen items-center justify-center ${
-          isSending ? "" : "hidden"
-        }`}
-      >
-        <div className="flex flex-col items-center justify-center">
-          <FadeLoader />
+      <Alert
+        message={alertMessage}
+        type={alertType}
+        onClose={() => setAlertMessage("")}
+      />{" "}
+      <div className={`fixed h-screen ${isSending ? "" : "hidden"}`}>
+        <div className="flex flex-col items-center justify-center h-full">
+          <FadeLoader color="white" height={35} margin={20} />
         </div>
       </div>
       <div
@@ -117,7 +141,7 @@ const Mail = () => {
             Your Email
           </label>
           <input
-            type="email"
+            type="text"
             placeholder="Ex: johndoe@gmail.com"
             id="email"
             name="email"

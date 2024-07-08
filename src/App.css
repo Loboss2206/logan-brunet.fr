@@ -3,6 +3,30 @@ body {
   font-size: 14px;
 }
 
+.tree-pipe {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: scaleY(1.7);
+}
+
+.tree-pipe2 {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: scaleY(1.38);
+}
+
+.tree-pipe3 {
+  display: inline-block;
+  vertical-align: top;
+  transform: scaleY(0.66);
+  transform-origin: top;
+}
+
+.tree-pipe-horizontal {
+  display: inline-block;
+  transform: scaleX(2.15);
+}
+
 .limit7lines {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -92,12 +116,6 @@ body {
   .responsive-text2 {
     font-size: 6vw;
   }
-}
-
-.tree-pipe {
-  display: inline-block;
-  vertical-align: bottom;
-  transform: scaleY(1.7);
 }
 
 /* Hamburger Menu */
