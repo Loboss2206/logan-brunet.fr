@@ -9,7 +9,9 @@ const Menu = () => {
       <motion.p className="block sm:flex text-green-400 text-xl sm:text-2xl font-bold">
         <motion.span className="flex">
           {"Made by Logan Brunet\u00A0\u00A0"}
-          <img src={cactus} width={size} height={size}></img>
+          <div>
+            <img src={cactus} width={size} height={size}></img>
+          </div>
           {"\u00A0\u00A0with\u00A0"}
         </motion.span>
         <motion.span className="flex justify-center">
