@@ -19,7 +19,7 @@ const Main = () => {
       >
         <div className="flex justify-center md:flex-row flex-wrap-reverse md:flex-nowrap lg:items-center gap-10 mt-24 lg:mt-0">
           <div className="flex flex-col gap-2">
-            <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl xl:text-6xl font-bold pb-2">
+            <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl font-bold pb-2">
               Hello World! I'm{" "}
               <span className={`${text_important}`}>Logan Brunet</span>,
             </motion.h1>
