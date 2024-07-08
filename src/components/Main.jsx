@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div
       name="Accueil"
-      className="flex md:justify-center items-center h-screen w-full bg-gradient-to-r px-5 flex-col from-background-color"
+      className="flex md:justify-center items-center h-screen w-full bg-gradient-to-r px-5 md:px-12 flex-col from-background-color"
     >
       <motion.div
         className="flex flex-col 2xl:w-2/3 items-center"
