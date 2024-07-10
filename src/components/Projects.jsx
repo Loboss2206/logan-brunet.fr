@@ -30,7 +30,7 @@ const Projects = () => {
         {isTitleAnimationComplete && (
           <div
             ref={projectsRef}
-            className="opacity-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-0 p-4 mt-4"
+            className="opacity-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-0 py-4 mt-4"
           >
             {projects
               .map(({ id, imageSrc, date, title, description, link, tags }) => (
