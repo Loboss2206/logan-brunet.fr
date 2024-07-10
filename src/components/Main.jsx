@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div
       name="Accueil"
-      className="flex md:justify-center items-center h-screen w-full bg-gradient-to-r px-5 flex-col from-background-color"
+      className="flex md:justify-center items-center h-screen w-full bg-gradient-to-r px-5 md:px-12 flex-col from-background-color"
     >
       <motion.div
         className="flex flex-col 2xl:w-2/3 items-center"
@@ -19,7 +19,7 @@ const Main = () => {
       >
         <div className="flex justify-center md:flex-row flex-wrap-reverse md:flex-nowrap lg:items-center gap-10 mt-24 lg:mt-0">
           <div className="flex flex-col gap-2">
-            <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl xl:text-6xl font-bold pb-2">
+            <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl font-bold pb-2">
               Hello World! I'm{" "}
               <span className={`${text_important}`}>Logan Brunet</span>,
             </motion.h1>
