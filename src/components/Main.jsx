@@ -52,7 +52,7 @@ const Main = () => {
             <img
               src={profileImage}
               alt="profile img"
-              className="mx-auto max-w-48 md2:max-w-64 rounded-full border-green-800 border-4 hover:cursor-pointer"
+              className="mx-auto max-w-48 lg:max-w-64 rounded-full border-green-800 border-4 hover:cursor-pointer"
             />
           </motion.div>
         </div>
