@@ -15,12 +15,30 @@ const Project = ({ id, imageSrc, date, title, description, link, tags }) => {
         <div className="absolute inset-0 rounded-md"></div>
         <img
           src={imageSrc}
-          alt="Project3"
+          alt={"pic " + title}
           className="h-44 w-auto rounded-md mb-2 mx-auto"
         />
         <div className="p-2 relative z-10">
           <p className="text-white text-base">Date : {date}</p>
-          <h3 className="text-green-500 text-2xl font-bold mb-2">{title}</h3>
+          <div className="text-green-500 text-2xl font-bold mb-2 flex gap-2 items-center">
+            <h3>{title}</h3>
+            <svg
+              className="hover:text-green-700 hover:scale-110"
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              height="25"
+              width="25"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </div>
           <p
             id={id}
             className={`text-white limit7lines z-10 hover:cursor-pointer`}

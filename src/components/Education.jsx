@@ -65,6 +65,7 @@ const Education = () => {
                 <div className="hidden md:block" key={id}>
                   <>
                     <TreeBranch
+                      key={"Degree" + id + index}
                       label={`${degree}`}
                       firstPipe={true}
                       secondPipe={true}
@@ -74,6 +75,7 @@ const Education = () => {
                       showPipe={true}
                     />
                     <TreeBranch
+                      key={"Institution" + id + index}
                       label={`${institution}`}
                       firstPipe={index !== education.length - 1}
                       secondPipe={false}
@@ -82,6 +84,7 @@ const Education = () => {
                       showPipe={false}
                     />
                     <TreeBranch
+                      key={"Year" + id + index}
                       label={`${year}`}
                       firstPipe={index !== education.length - 1}
                       secondPipe={false}
@@ -93,6 +96,7 @@ const Education = () => {
                     {skills.length > 0 && (
                       <>
                         <TreeBranch
+                          key={"Skills" + id + index}
                           label={`Skills`}
                           firstPipe={index !== education.length - 1}
                           isLast={false}
@@ -102,7 +106,7 @@ const Education = () => {
                         />
                         {skills.map((skill, skillIndex) => (
                           <TreeBranch
-                            key={skillIndex}
+                            key={id + skill + skillIndex}
                             label={`${skill}`}
                             isLast={skillIndex === skills.length - 1}
                             firstPipe={index !== education.length - 1}
@@ -119,7 +123,7 @@ const Education = () => {
                       <>
                         {specials.map((special, specialIndex) => (
                           <TreeBranch
-                            key={specialIndex}
+                            key={id + special + specialIndex}
                             label={`${special}`}
                             firstPipe={index !== education.length - 1}
                             secondPipe={false}
@@ -138,9 +142,9 @@ const Education = () => {
                     {specialsWithImage.length > 0 && (
                       <>
                         {specialsWithImage.map((special, specialIndex) => (
-                          <div>
+                          <div key={id + "specialImg" + specialIndex}>
                             <TreeBranch
-                              key={specialIndex}
+                              key={id + special.title + specialIndex}
                               label={`${special.title}`}
                               firstPipe={index !== education.length - 1}
                               secondPipe={false}
@@ -173,6 +177,7 @@ const Education = () => {
                     )}
 
                     <TreeBranch
+                      key={"end" + id + index}
                       empty={true}
                       showPipe={index !== education.length - 1}
                     />
@@ -192,8 +197,9 @@ const Education = () => {
                 srcImage,
                 link,
               }) => (
-                <div className="md:hidden" key={id}>
+                <div className="md:hidden" key={id + "2"}>
                   <EducationBox
+                    key={"box" + id}
                     degree={degree}
                     institution={institution}
                     year={year}

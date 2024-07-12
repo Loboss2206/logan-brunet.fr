@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import profileImage from "../assets/others/profile.jpeg";
+import profileImage from "../assets/others/profile.jpg";
 
 const Main = () => {
   const text = "text-black dark:text-white";
@@ -18,7 +18,7 @@ const Main = () => {
         animate="visible"
       >
         <div className="flex justify-center md:flex-row flex-wrap-reverse md:flex-nowrap lg:items-center gap-10 mt-24 lg:mt-0">
-          <div className="flex flex-col gap-2">
+          <motion.div className="flex flex-col justify-center gap-2">
             <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl font-bold pb-2">
               Hello World! I'm{" "}
               <span className={`${text_important}`}>Logan Brunet</span>,
@@ -41,19 +41,18 @@ const Main = () => {
 
             <motion.p className="flex text-black dark:text-white text-xl lg:text-3xl item mt-8">
               <i>
-                Currently seeking for an{" "}
-                <span className={`${text_important}`}>apprenticeship</span> in
-                one of those fields from{" "}
-                <span className={`${text_important}`}>September 2024</span> to{" "}
-                <span className={`${text_important}`}>September 2026</span>.
+                Starting soon a new adventure as an apprentice developer at{" "}
+                <span className={`${text_important}`}>Amadeus</span> on the{" "}
+                <span className={`${text_important}`}>Sophia Antipolis</span>{" "}
+                site.{" "}
               </i>
             </motion.p>
-          </div>
-          <motion.div className="item hover:animate-spin">
+          </motion.div>
+          <motion.div className="hover:animate-spin">
             <img
               src={profileImage}
               alt="profile img"
-              className="mx-auto max-w-2xl hover:scale-110 duration-500 rounded-full border-green-800 border-4 hover:cursor-pointer"
+              className="mx-auto max-w-48 md2:max-w-64 rounded-full border-green-800 border-4 hover:cursor-pointer"
             />
           </motion.div>
         </div>
