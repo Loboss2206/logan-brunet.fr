@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
 import Project from "./Project";
 import projectsMock from "../datas/projects";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [isTitleAnimationComplete, setIsTitleAnimationComplete] =
     useState(false);
   const projects = projectsMock;
@@ -22,10 +24,11 @@ const Projects = () => {
     >
       <div className="flex flex-col w-full 2xl:w-2/3 flex-grow">
         <CustomTitle
-          title="ls ~/Projects"
+          currentLanguage={localStorage.getItem("currentLangage")}
+          title={t(`projects.title`)}
           margin="8"
           onAnimationEnd={() => setIsTitleAnimationComplete(true)}
-          animationActivated={false}
+          animationActivated={!isTitleAnimationComplete}
         />
         {isTitleAnimationComplete && (
           <div
@@ -38,9 +41,15 @@ const Projects = () => {
                   key={id}
                   id={id}
                   imageSrc={imageSrc}
-                  date={date}
-                  title={title}
-                  description={description}
+                  date={t(`projects.${title.replaceAll(" ", "")}.date`, date)}
+                  title={t(
+                    `projects.${title.replaceAll(" ", "")}.title`,
+                    title
+                  )}
+                  description={t(
+                    `projects.${title.replaceAll(" ", "")}.description`,
+                    description
+                  )}
                   link={link}
                   tags={tags}
                 />

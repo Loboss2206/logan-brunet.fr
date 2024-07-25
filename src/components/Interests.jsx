@@ -7,8 +7,10 @@ import plane2 from "../assets/interests/earth.png";
 import narutomaki from "../assets/interests/narutomaki.png";
 import japan from "../assets/interests/japan.png";
 import InterestBox from "./InterestBox";
+import { useTranslation } from "react-i18next";
 
 const Interests = () => {
+  const { t, i18n } = useTranslation();
   const [isTitleAnimationComplete, setIsTitleAnimationComplete] =
     React.useState(false);
   const interestsRef = useRef(null);
@@ -26,7 +28,8 @@ const Interests = () => {
     >
       <div className="flex flex-col w-full 2xl:w-2/3">
         <CustomTitle
-          title='find -name "*interests*"'
+          currentLanguage={localStorage.getItem("currentLangage")}
+          title={t("interests.title")}
           margin="12"
           onAnimationEnd={() => setIsTitleAnimationComplete(true)}
         />
@@ -80,7 +83,7 @@ const Interests = () => {
                 />
               </a>
               <p className="animate-swing dark:text-white text-4xl font-bold text-center">
-                Travelling
+                {t("interests.Travelling.title")}
               </p>
             </div>
 
@@ -104,26 +107,29 @@ const Interests = () => {
                 />
               </a>
               <p className="animate-swing dark:text-white text-4xl font-bold text-center">
-                Japan
+                {t("interests.Japan.title")}
               </p>
             </div>
           </div>
           <div className="md:hidden flex flex-col bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-lg p-2">
             <InterestBox
+              id="1"
               title="Volley-ball"
-              description="I play volley-ball every weeks."
+              description={t("interests.Volley-ball.description")}
               srcImage={ball}
               link="http://www.ffvb.org/"
             />
             <InterestBox
-              title="Travelling"
-              description="I love travelling and discovering new places."
+              id="2"
+              title={t("interests.Travelling.title")}
+              description={t("interests.Travelling.description")}
               srcImage={plane}
               link="https://www.lonelyplanet.com/"
             />
             <InterestBox
-              title="Japan"
-              description="I love so much manga and food from Japan."
+              id="3"
+              title={t("interests.Japan.title")}
+              description={t("interests.Japan.description")}
               srcImage={narutomaki}
               link="https://www.japan.travel/"
             />

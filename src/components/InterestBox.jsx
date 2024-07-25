@@ -1,4 +1,4 @@
-const InterestBox = ({ title, description, srcImage, link }) => {
+const InterestBox = ({ id, title, description, srcImage, link }) => {
   return (
     <div className="w-full flex my-3">
       <a
@@ -8,19 +8,19 @@ const InterestBox = ({ title, description, srcImage, link }) => {
         target="_blank"
         rel="noreferrer"
       >
-        {title === "Volley-ball" ? (
+        {id === "1" ? (
           <img
             src={srcImage}
             alt={title}
             className="w-full h-full object-contain rounded-lg animate-spin mx-auto"
           />
-        ) : title === "Travelling" ? (
+        ) : id === "2" ? (
           <img
             src={srcImage}
             alt={title}
             className="w-full h-full object-cover rounded-lg animate-bounce mt-4 mx-auto"
           />
-        ) : title === "Japan" ? (
+        ) : id === "3" ? (
           <img
             src={srcImage}
             alt={title}

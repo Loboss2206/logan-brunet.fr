@@ -6,7 +6,11 @@ import langagesMock from "../datas/langages";
 import osMock from "../datas/os";
 import toolsMock from "../datas/tools";
 
+import { useTranslation } from "react-i18next";
+
 const Skills = () => {
+  const { t } = useTranslation();
+
   const [isFirstTitleAnimationComplete, setIsFirstTitleAnimationComplete] =
     useState(false);
   const [isSecondTitleAnimationComplete, setIsSecondTitleAnimationComplete] =
@@ -54,16 +58,20 @@ const Skills = () => {
     >
       <div className="flex flex-col w-full 2xl:w-2/3">
         <CustomTitle
-          title="cd ~/Skills"
+          currentLanguage={localStorage.getItem("currentLangage")}
+          title={t(`skills.title`)}
           margin="12"
           onAnimationEnd={() => setIsFirstTitleAnimationComplete(true)}
+          animationActivated={!isFirstTitleAnimationComplete}
         />
         {isFirstTitleAnimationComplete && (
           <>
             <CustomTitle
-              title="ls Langages&Frameworks"
+              currentLanguage={localStorage.getItem("currentLangage")}
+              title={t(`skills.langages.title`)}
               margin="0"
               onAnimationEnd={() => setIsSecondTitleAnimationComplete(true)}
+              animationActivated={!isSecondTitleAnimationComplete}
             />
             {isSecondTitleAnimationComplete && (
               <div ref={langagesRef} className={skillBoxesStyle}>
@@ -82,9 +90,11 @@ const Skills = () => {
         {isSecondTitleAnimationComplete && (
           <>
             <CustomTitle
-              title="ls OperatingSystems"
+              currentLanguage={localStorage.getItem("currentLangage")}
+              title={t(`skills.os.title`)}
               margin="12"
               onAnimationEnd={() => setIsThirdTitleAnimationComplete(true)}
+              animationActivated={!isThirdTitleAnimationComplete}
             />
             {isThirdTitleAnimationComplete && (
               <div ref={osRef} className={skillBoxesStyle}>
@@ -103,9 +113,11 @@ const Skills = () => {
         {isThirdTitleAnimationComplete && (
           <>
             <CustomTitle
-              title="ls Tools"
+              currentLanguage={localStorage.getItem("currentLangage")}
+              title={t(`skills.tools.title`)}
               margin="12"
               onAnimationEnd={() => setIsFourthTitleAnimationComplete(true)}
+              animationActivated={!isFourthTitleAnimationComplete}
             />
             {isFourthTitleAnimationComplete && (
               <div ref={toolsRef} className={skillBoxesStyle}>

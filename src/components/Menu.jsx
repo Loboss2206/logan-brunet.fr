@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import github from "../assets/tools/github.svg";
+import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 const Menu = () => {
+  const { t, i18n } = useTranslation();
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
   const toggleMobileMenu = () => {
     setIsActive(!isActive);
@@ -21,6 +26,15 @@ const Menu = () => {
 
     const html = document.querySelector("html");
     html.classList.toggle("dark", newDarkMode);
+  };
+
+  const handleChangeLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "fr" : "en";
+
+    localStorage.setItem("currentLangage", newLanguage);
+
+    setCurrentLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
   };
 
   const handleResize = useCallback(() => {
@@ -80,16 +94,20 @@ const Menu = () => {
               <p
                 className={`animate-swing-hover text-white text-2xl font-bold py-2 duration-300 hover:scale-125`}
               >
-                ABOUT
+                {t("header.about")}
               </p>
             </a>
             <a href="contact">
               <p
                 className={`animate-swing-hover text-white text-2xl font-bold py-2 duration-300 hover:scale-125`}
               >
-                CONTACT
+                {t("header.contact")}
               </p>
             </a>
+            <button type="button" onClick={handleChangeLanguage}>
+              <h1>{t("header.about")}</h1>{" "}
+              <h3>Current Language: {currentLanguage}</h3>
+            </button>
           </nav>
 
           <div id="icons" className="hidden md2:flex md2:space-x-4 md2:order-4">
@@ -165,18 +183,22 @@ const Menu = () => {
                 <p
                   className={`animate-swing-hover text-white responsive-text2 font-bold`}
                 >
-                  ABOUT
+                  {t("header.about")}
                 </p>
               </a>
               <a href="contact">
                 <p
                   className={`animate-swing-hover text-white responsive-text2 font-bold`}
                 >
-                  CONTACT
+                  {t("header.contact")}
                 </p>
               </a>
             </nav>
             <div id="icons" className="flex space-x-4 mt-4">
+              <button type="button" onClick={handleChangeLanguage}>
+                <h1>{t("header.about")}</h1>{" "}
+                <h3>Current Language: {currentLanguage}</h3>
+              </button>
               <a
                 href="https://www.linkedin.com/in/blogan06/"
                 target="_blank"

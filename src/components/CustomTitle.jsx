@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
+  const { t } = useTranslation();
   const [visibleText, setVisibleText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimationFinished, setIsAnimationFinished] = useState(false);
@@ -43,14 +45,14 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
   }, [animationActivated]);
 
   useEffect(() => {
-    if (isVisible && animationActivated) {
+    if (isVisible && animationActivated && !isAnimationFinished) {
       animateText(0);
     } else if (!animationActivated) {
-      setVisibleText(title);
-      setIsVisible(true); // set isVisible to true here
+      setVisibleText(t(title));
+      setIsVisible(true);
       setIsAnimationFinished(true);
     }
-  }, [isVisible, animationActivated]);
+  }, [isVisible, animationActivated, isAnimationFinished, t, title]);
 
   useEffect(() => {
     if (isAnimationFinished) {
@@ -59,9 +61,9 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
   }, [isAnimationFinished, onAnimationEnd]);
 
   const animateText = (index) => {
-    if (index <= title.length && animationActivated) {
+    if (index <= t(title).length && animationActivated) {
       setTimeout(() => {
-        setVisibleText(title.substring(0, index));
+        setVisibleText(t(title).substring(0, index));
         animateText(index + 1);
       }, 150);
     } else {
@@ -117,6 +119,7 @@ CustomTitle.propTypes = {
   margin: PropTypes.string.isRequired,
   onAnimationEnd: PropTypes.func,
   animationActivated: PropTypes.bool,
+  currentLanguage: PropTypes.string.isRequired,
 };
 
 CustomTitle.defaultProps = {

@@ -1,0 +1,120 @@
+{
+  "header": {
+    "about": "A PROPOS",
+    "contact": "CONTACT"
+  },
+  "main": {
+    "hello": "Salut tout le monde ! Je suis <span className='{{text_important}}'>Logan Brunet</span>,",
+    "firstP": "Étudiant à <span className='{{text_important}}'>Polytech Nice-Sophia</span> en Sciences Informatique. Principalement interessé par la <span className='{{text_important}}'>Cybersecurité</span>, et le <span className='{{text_important}}'>Développement logiciel</span>. J'apprécie aussi beaucoup voyager et découvrir de nouvelles technologies.",
+    "secondP": "D'ailleurs, je commencerais bientôt une nouvelle aventure en tant qu'apprenti développeur à <span className='{{text_important}}'>Amadeus</span> sur le site de <span className='{{text_important}}'>Sophia Antipolis</span>."
+  },
+  "projects": {
+    "title": "ls ~/Projets",
+    "LutinVSMonstres": {
+      "date": "Octobre 2021 - Janvier 2022",
+      "title": "Lutin VS Monstres",
+      "description": "Ce projet a été développé pour le projet S1.01 durant mon premier semestre à l'IUT de Nice. Le but était de créer un jeu où un lutin doit éviter des monstres dans une grille en utilisant des mouvements écrits dans un fichier."
+    },
+    "Pokae": {
+      "date": "Février 2022 - Juin 2022",
+      "title": "Pokae",
+      "description": "Dans le cadre du projet S2.01 durant le deuxième semestre de BUT Informatique, nous devions créer un jeu de combat Pokemon avec une interface console. Le joueur peut choisir ses pokemons et se battre contre un autre joueur ou un bot basé sur différents algorithmes."
+    },
+    "StitchLand": {
+      "date": "Avril 2022",
+      "title": "StitchLand",
+      "description": "Ce projet a été réalisé dans le cadre de la ressource de développement mobile durant mon quatrième semestre de BUT Informatique. Le but était de créer une application de e-commerce en utilisant diverses technologies utiles et intéressantes. Dans notre boutique, nous vendons plusieurs types de peluches, chacune avec ses propres caractéristiques."
+    },
+    "KillBique": {
+      "date": "Septembre 2022 - Janvier 2023",
+      "title": "KillBique",
+      "description": "Description de test"
+    },
+    "MozaicGenerator": {
+      "date": "Mars 2023",
+      "title": "Générateur de mosaïque",
+      "description": "Ce petit projet a été réalisé pour le cours d'intelligence artificielle durant mon quatrième semestre de BUT Informatique. Le but était de créer un petit programme qui génère une mosaïque à partir d'une image avec une taille de blocs spécifique. Chaque bloc de l'image principale sera une autre image qui correspond le mieux à la couleur du bloc."
+    },
+    "Mangattack": {
+      "date": "Avril 2023 - Septembre 2023",
+      "title": "Mangattack",
+      "description": "Ce projet a été développé par moi-même et vise à créer une boutique de mangas où les utilisateurs peuvent acheter des mangas et les lire en ligne (pas réelement). Une page principale permet aux utilisateurs de voir les derniers mangas et les plus populaires. Ils peuvent également cliquer sur un manga pour voir ses détails. Il comprend également une page d'administration, un système de panier et un système de connexion."
+    },
+    "PersonalPortfolio": {
+      "date": "Septembre 2023 - Juin 2024",
+      "title": "Portfolio Personnel",
+      "description": "Ce projet est mon portfolio personnel et permet aux personnes qui ne me connaissent pas de découvrir mes compétences, mes expériences, mes projets, mes loisirs et d'autres informations sur moi. Il peut être utilisé sur n'importe quel appareil et est entièrement responsive et permet aussi à tout le monde de me contacter en m'envoyant un email."
+    },
+    "Citadels": {
+      "date": "Octobre 2023 - Février 2024",
+      "title": "Citadelles",
+      "description": "Ce projet éducatif, développé pour le cours PS5 à Polytech Nice-Sophia, vise à recréer le célèbre jeu Citadelles et toutes ses fonctionnalités dans une version simplifiée sans interface graphique et jouable uniquement par des bots."
+    },
+    "Klamar": {
+      "date": "Février 2024 - Juin 2024",
+      "title": "Klamar",
+      "description": "Ce projet a été réalisé pour le cours PS6 à Polytech Nice-Sophia. Le but était de créer un site web pour aider les personnes atteintes de la maladie d'Alzheimer en leur offrant la possibilité de jouer à un quiz (et à 2 autres jeux surprises) pour stimuler leur mémoire."
+    }
+  },
+  "skills": {
+    "title": "cd ~/Compétences",
+    "langages": {
+      "title": "ls Langages&Frameworks"
+    },
+    "os": {
+      "title": "ls SystèmesExploitation"
+    },
+    "tools": {
+      "title": "ls Outils"
+    }
+  },
+  "education": {
+    "titleMinSize": "ls ~/Éducation",
+    "titleMaxSize": "tree ~/Éducation",
+    "PolytechNice-Sophia": {
+      "degree": "Diplôme d'ingénieur informatique",
+      "skills": {
+        "title": "Compétences",
+        "SoftwareArchitecture": "Architecture Logicielle",
+        "ArtificialIntelligence": "Intelligence Artificielle",
+        "AndroidDevelopment": "Développement Android",
+        "Networks": "Réseaux"
+      },
+      "specials": {
+        "ProfesionnalEnglishLevel(TOEIC915)": "Niveau d'anglais professionnel (TOEIC 915)"
+      }
+    },
+    "IUTdeNiceFabron": {
+      "degree": "DUT Informatique",
+      "skills": {
+        "title": "Compétences"
+      },
+      "specials": {
+        "IntermediateEnglishLevel(TOEIC805)": "Niveau d'anglais intermédiaire (TOEIC 805)",
+        "3-monthInternshipasaDevOpsattheMediterraneanInstituteofProtonTherapyinNice": {
+          "title": "Stage de 3 mois en tant que DevOps à l'Institut Méditerranéen de Protonthérapie à Nice.",
+          "description": "Implémentation de scripts conçus pour déployer des conteneurs sur divers systèmes d'exploitation, simplifiant la configuration de l'intégration continue pour les logiciels de l'institut sur ces plateformes."
+        }
+      }
+    }
+  },
+  "interests": {
+    "title": "locate intérêts",
+    "Volley-ball": {
+      "description": "Je joue au volley-ball toutes les semaines."
+    },
+    "Travelling": {
+      "title": "Voyages",
+      "description": "J'adore voyager et découvrir de nouveaux endroits."
+    },
+    "Japan": {
+      "title": "Japon",
+      "description": "J'aime beaucoup les mangas et la cuisine japonaise."
+    }
+  },
+  "footer": {
+    "creator": "Fait par Logan Brunet",
+    "with": "avec",
+    "and": "et"
+  }
+}

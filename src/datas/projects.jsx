@@ -1,3 +1,7 @@
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
+
 // Projects
 import citadels from "../assets/projects/citadels.png";
 import elfRunning from "../assets/projects/elf-running.png";
@@ -185,7 +189,7 @@ const projects = [
   },
   {
     id: 7,
-    title: "Portfolio personnel",
+    title: "Personal Portfolio",
     date: "September 2023 - June 2024",
     link: "https://github.com/Loboss2206/logan-brunet.fr",
     description:

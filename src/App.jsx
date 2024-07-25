@@ -2,8 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t, i18n } = useTranslation();
   function isMobile() {
     const userAgent = navigator.userAgent;
     const mobileDevices = [
@@ -32,15 +35,17 @@ function App() {
   }`;
 
   return (
-    <Router>
-      <div className={backgroundClassName}>
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    </Router>
+    <Suspense fallback="...loading">
+      <Router>
+        <div className={backgroundClassName}>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </Router>
+    </Suspense>
   );
 }
 

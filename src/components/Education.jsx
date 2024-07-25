@@ -3,8 +3,10 @@ import CustomTitle from "./CustomTitle";
 import TreeBranch from "./TreeBranch";
 import educationMock from "../datas/education";
 import EducationBox from "./EducationBox";
+import { useTranslation } from "react-i18next";
 
 const Education = () => {
+  const { t, i18n } = useTranslation();
   const [isTitleAnimationComplete, setIsTitleAnimationComplete] =
     useState(false);
   const [title, setTitle] = useState("");
@@ -14,9 +16,9 @@ const Education = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setTitle("ls ~/Education");
+        setTitle(t(`education.titleMinSize`));
       } else {
-        setTitle("tree ~/Education");
+        setTitle(t(`education.titleMaxSize`));
       }
     };
 
@@ -26,7 +28,7 @@ const Education = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (isTitleAnimationComplete) {
@@ -41,6 +43,7 @@ const Education = () => {
     >
       <div className="flex flex-col w-full 2xl:w-2/3">
         <CustomTitle
+          currentLanguage={localStorage.getItem("currentLangage")}
           animationActivated={!isTitleAnimationComplete}
           title={title}
           margin="12"
@@ -66,7 +69,9 @@ const Education = () => {
                   <>
                     <TreeBranch
                       key={"Degree" + id + index}
-                      label={`${degree}`}
+                      label={t(
+                        `education.${institution.replaceAll(" ", "")}.degree`
+                      )}
                       firstPipe={true}
                       secondPipe={true}
                       isLast={index === education.length - 1}
@@ -76,7 +81,7 @@ const Education = () => {
                     />
                     <TreeBranch
                       key={"Institution" + id + index}
-                      label={`${institution}`}
+                      label={institution}
                       firstPipe={index !== education.length - 1}
                       secondPipe={false}
                       depth="1"
@@ -85,7 +90,7 @@ const Education = () => {
                     />
                     <TreeBranch
                       key={"Year" + id + index}
-                      label={`${year}`}
+                      label={year}
                       firstPipe={index !== education.length - 1}
                       secondPipe={false}
                       depth="1"
@@ -97,7 +102,12 @@ const Education = () => {
                       <>
                         <TreeBranch
                           key={"Skills" + id + index}
-                          label={`Skills`}
+                          label={t(
+                            `education.${institution.replaceAll(
+                              " ",
+                              ""
+                            )}.skills.title`
+                          )}
                           firstPipe={index !== education.length - 1}
                           isLast={false}
                           depth="1"
@@ -107,7 +117,21 @@ const Education = () => {
                         {skills.map((skill, skillIndex) => (
                           <TreeBranch
                             key={id + skill + skillIndex}
-                            label={`${skill}`}
+                            label={
+                              i18n.exists(
+                                `education.${institution.replaceAll(
+                                  " ",
+                                  ""
+                                )}.skills.${skill.replaceAll(" ", "")}`
+                              )
+                                ? t(
+                                    `education.${institution.replaceAll(
+                                      " ",
+                                      ""
+                                    )}.skills.${skill.replaceAll(" ", "")}`
+                                  )
+                                : skill
+                            }
                             isLast={skillIndex === skills.length - 1}
                             firstPipe={index !== education.length - 1}
                             secondPipe={true}
@@ -124,12 +148,17 @@ const Education = () => {
                         {specials.map((special, specialIndex) => (
                           <TreeBranch
                             key={id + special + specialIndex}
-                            label={`${special}`}
+                            label={t(
+                              `education.${institution.replaceAll(
+                                " ",
+                                ""
+                              )}.specials.${special.replaceAll(" ", "")}`
+                            )}
                             firstPipe={index !== education.length - 1}
                             secondPipe={false}
                             isLast={
                               specialIndex === specials.length - 1 &&
-                              specialsWithImage.length == 0
+                              specialsWithImage.length === 0
                             }
                             depth="1"
                             color="white"
@@ -145,7 +174,15 @@ const Education = () => {
                           <div key={id + "specialImg" + specialIndex}>
                             <TreeBranch
                               key={id + special.title + specialIndex}
-                              label={`${special.title}`}
+                              label={t(
+                                `education.${institution.replaceAll(
+                                  " ",
+                                  ""
+                                )}.specials.${special.title.replaceAll(
+                                  " ",
+                                  ""
+                                )}.title`
+                              )}
                               firstPipe={index !== education.length - 1}
                               secondPipe={false}
                               isLast={
@@ -167,7 +204,7 @@ const Education = () => {
                             >
                               <img
                                 src={special.srcImage}
-                                alt={special.title}
+                                alt={t(`education.specials.${special.title}`)}
                                 className="h-36 rounded-lg bg-gray-200 border-4 border-gray-400 p-2"
                               />
                             </a>
@@ -200,12 +237,53 @@ const Education = () => {
                 <div className="md:hidden" key={id + "2"}>
                   <EducationBox
                     key={"box" + id}
-                    degree={degree}
+                    degree={t(
+                      `education.${institution.replaceAll(" ", "")}.degree`,
+                      degree
+                    )}
                     institution={institution}
                     year={year}
-                    skills={skills}
-                    specials={specials}
-                    specialsWithImage={specialsWithImage}
+                    skills={skills.map((skill) =>
+                      i18n.exists(
+                        `education.${institution.replaceAll(
+                          " ",
+                          ""
+                        )}.skills.${skill.replaceAll(" ", "")}`
+                      )
+                        ? t(
+                            `education.${institution.replaceAll(
+                              " ",
+                              ""
+                            )}.skills.${skill.replaceAll(" ", "")}`
+                          )
+                        : skill
+                    )}
+                    specials={specials.map((special) =>
+                      t(
+                        `education.${institution.replaceAll(
+                          " ",
+                          ""
+                        )}.specials.${special.replaceAll(" ", "")}`
+                      )
+                    )}
+                    specialsWithImage={specialsWithImage.map((special) => ({
+                      ...special,
+                      title: t(
+                        `education.${institution.replaceAll(
+                          " ",
+                          ""
+                        )}.specials.${special.title.replaceAll(" ", "")}.title`
+                      ),
+                      description: t(
+                        `education.${institution.replaceAll(
+                          " ",
+                          ""
+                        )}.specials.${special.title.replaceAll(
+                          " ",
+                          ""
+                        )}.description`
+                      ),
+                    }))}
                     srcImage={srcImage}
                     link={link}
                   />

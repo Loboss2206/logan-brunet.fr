@@ -1,0 +1,121 @@
+{
+  "header": {
+    "about": "ABOUT",
+    "contact": "CONTACT"
+  },
+  "main": {
+    "hello": "Hello World ! I'm <span className='{{text_important}}'>Logan Brunet</span>,",
+    "firstP": "Student at <span className='{{text_important}}'>Polytech Nice-Sophia</span> in Computer Science. Mainly interested in <span className='{{text_important}}'>Cybersecurity</span>, and <span className='{{text_important}}'>Software Development</span>. I also enjoy traveling and exploring new technologies.",
+    "secondP": "Starting soon a new adventure as an apprentice developer at <span className='{{text_important}}'>Amadeus</span> on the 2rd <span className='{{text_important}}'>Sophia Antipolis</span> site."
+  },
+  "projects": {
+    "title": "ls ~/Projects",
+    "LutinVSMonstres": {
+      "date": "October 2021 - January 2022",
+      "title": "Lutin VS Monstres",
+      "description": "This project was developed for the S1.01 project at the IUT of Nice. The goal was to create a game where a lutin has to avoid monsters in a grid by using movements written in a file."
+    },
+    "Pokae": {
+      "date": "February 2022 - June 2022",
+      "title": "Pokae",
+      "description": "In the context of the S2.01 project during the second semester of BUT Informatique, we had to create a Pokemon fight game with a console interface. The player can choose his pokemons and fight against another player or a bot based on different algorithms."
+    },
+    "StitchLand": {
+      "date": "April 2022",
+      "title": "StitchLand",
+      "description": "This project was carried out as part of the mobile development resource during my fourth semester of BUT Informatique. The goal was to create an e-commerce application using various useful and interesting technologies. In our shop, we sell several types of teddy bears, each with its own characteristics."
+    },
+    "KillBique": {
+      "date": "September 2022 - January 2023",
+      "title": "KillBique",
+      "description": "Test Description"
+    },
+    "MozaicGenerator": {
+      "date": "March 2023",
+      "title": "Mozaic Generator",
+      "description": "This little project was done for the Artificial Intelligence course during my fourth semester of BUT Informatique. The goal was to create a little program that generates a mosaic from a picture with a specific size of blocks. Each block of the main picture will be another picture which matches the best with the color of the block."
+    },
+    "Mangattack": {
+      "date": "April 2023 - September 2023",
+      "title": "Mangattack",
+      "description": "This project was developed on my own and aims to create a manga shop where users can buy mangas and read them online (not for real). A main page allows users to see the latest mangas and the most popular ones. They can also click on a manga to see its details. It also includes an admin page, a cart system and a login system."
+    },
+    "PersonalPortfolio": {
+      "date": "September 2023 - June 2024",
+      "title": "Personal Portfolio",
+      "description": "This project is my personal portfolio and it allows people who don't know me to discover my skills, my experiences, my projects, my hobbies and some other information about me. It can be used on any device and is fully responsive and finally it also allows people to contact me by sending me an email."
+    },
+    "Citadels": {
+      "date": "October 2023 - February 2024",
+      "title": "Citadels",
+      "description": "This educational project, developed for the PS5 course at Polytech Nice-Sophia, aims to recreate the famous Citadels game and all its features in a simplified version without a graphical interface and playable only by bots."
+    },
+    "Klamar": {
+      "date": "February 2024 - June 2024",
+      "title": "Klamar",
+      "description": "This project was done for the PS6 course at Polytech Nice-Sophia. The goal was to create a website to help people with Alzheimer's disease by providing them the possibility to play a quiz (and 2 other surprise games) to stimulate their memory."
+    }
+  },
+  "skills": {
+    "title": "cd ~/Skills",
+    "langages": {
+      "title": "ls Langages&Frameworks"
+    },
+    "os": {
+      "title": "ls OperatingSystems"
+    },
+    "tools": {
+      "title": "ls Tools"
+    }
+  },
+  "education": {
+    "titleMinSize": "ls ~/Education",
+    "titleMaxSize": "tree ~/Education",
+    "PolytechNice-Sophia": {
+      "degree": "Graduate University degree in Engineering",
+      "skills": {
+        "title": "Skills",
+        "SoftwareArchitecture": "Software Architecture",
+        "ArtificialIntelligence": "Artificial Intelligence",
+        "AndroidDevelopment": "Android development",
+        "CI/CD": "CI/CD",
+        "Networks": "Networks"
+      },
+      "specials": {
+        "ProfesionnalEnglishLevel(TOEIC915)": "Profesionnal English Level (TOEIC 915)"
+      }
+    },
+    "IUTdeNiceFabron": {
+      "degree": "Two-year University of Technology degree",
+      "skills": {
+        "title": "Skills"
+      },
+      "specials": {
+        "IntermediateEnglishLevel(TOEIC805)": "Intermediate English Level (TOEIC 805)",
+        "3-monthInternshipasaDevOpsattheMediterraneanInstituteofProtonTherapyinNice": {
+          "title": "3-month Internship as a DevOps at the Mediterranean Institute of ProtonTherapy in Nice.",
+          "description": "Implementation of scripts designed to deploy containers on various operating systems, streamlining the continuous integration setup for the institute's software on these platforms."
+        }
+      }
+    }
+  },
+  "interests": {
+    "title": "locate interests",
+    "Volley-ball": {
+      "description": "I play volley-ball every weeks."
+    },
+    "Travelling": {
+      "title": "Travelling",
+      "description": "I love travelling and discovering new places."
+    },
+    "Japan": {
+      "title": "Japan",
+      "description": "I love so much manga and food from Japan."
+    }
+  },
+  "footer": {
+    "creator": "Made by Logan Brunet",
+    "with": "with",
+    "and": "and"
+  }
+}

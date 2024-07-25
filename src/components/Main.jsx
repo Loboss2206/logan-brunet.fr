@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Trans } from "react-i18next";
 
 import profileImage from "../assets/others/profile.jpg";
 
@@ -20,31 +21,30 @@ const Main = () => {
         <div className="flex justify-center md:flex-row flex-wrap-reverse md:flex-nowrap lg:items-center gap-10 mt-24 lg:mt-0">
           <motion.div className="flex flex-col justify-center gap-2">
             <motion.h1 className="text-black dark:text-white text-3xl md2:text-4xl lg:text-5xl font-bold pb-2">
-              Hello World! I'm{" "}
-              <span className={`${text_important}`}>Logan Brunet</span>,
+              <Trans
+                i18nKey="main.hello"
+                values={{ text_important }}
+                components={{ span: <span className={text_important} /> }}
+              />
             </motion.h1>
 
             <motion.p className="flex text-black dark:text-white text-xl lg:text-3xl item">
               <i>
-                Student at{" "}
-                <span className={`${text_important}`}>
-                  Polytech Nice-Sophia
-                </span>{" "}
-                in Computer Science. Mainly interested in{" "}
-                <span className={`${text_important}`}>Cybersecurity</span>, and{" "}
-                <span className={`${text_important}`}>
-                  Software Development
-                </span>
-                . I also enjoy traveling and exploring new technologies.{" "}
+                <Trans
+                  i18nKey="main.firstP"
+                  values={{ text_important }}
+                  components={{ span: <span className={text_important} /> }}
+                />
               </i>
             </motion.p>
 
             <motion.p className="flex text-black dark:text-white text-xl lg:text-3xl item mt-8">
               <i>
-                Starting soon a new adventure as an apprentice developer at{" "}
-                <span className={`${text_important}`}>Amadeus</span> on the{" "}
-                <span className={`${text_important}`}>Sophia Antipolis</span>{" "}
-                site.{" "}
+                <Trans
+                  i18nKey="main.secondP"
+                  values={{ text_important }}
+                  components={{ span: <span className={text_important} /> }}
+                />
               </i>
             </motion.p>
           </motion.div>
