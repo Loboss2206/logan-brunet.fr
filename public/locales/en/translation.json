@@ -6,7 +6,7 @@
   "main": {
     "hello": "Hello World ! I'm <span className='{{text_important}}'>Logan Brunet</span>,",
     "firstP": "Student at <span className='{{text_important}}'>Polytech Nice-Sophia</span> in Computer Science. Mainly interested in <span className='{{text_important}}'>Cybersecurity</span>, and <span className='{{text_important}}'>Software Development</span>. I also enjoy traveling and exploring new technologies.",
-    "secondP": "Starting soon a new adventure as an apprentice developer at <span className='{{text_important}}'>Amadeus</span> on the 2rd <span className='{{text_important}}'>Sophia Antipolis</span> site."
+    "secondP": "Starting soon a new adventure as an apprentice developer at <span className='{{text_important}}'>Amadeus</span> on the <span className='{{text_important}}'>Sophia Antipolis</span> site."
   },
   "projects": {
     "title": "ls ~/Projects",
