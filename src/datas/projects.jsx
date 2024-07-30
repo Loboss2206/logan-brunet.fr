@@ -105,7 +105,7 @@ const tags = {
     tagImage: python,
   },
   IA: {
-    tagName: "IA",
+    tagName: "AI",
     tagImage: ia,
   },
   apache: {

@@ -133,5 +133,8 @@
     },
     "send": "Envoyer",
     "sending": "Envoi..."
+  },
+  "tags": {
+    "AI": "IA"
   }
 }

@@ -134,5 +134,8 @@
     },
     "send": "Send",
     "sending": "Sending..."
+  },
+  "tags": {
+    "AI": "AI"
   }
 }
