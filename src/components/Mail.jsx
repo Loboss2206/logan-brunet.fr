@@ -5,8 +5,11 @@ import { emailServiceId, emailTemplateId, emailUserId } from "../emailjs-id";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FadeLoader } from "react-spinners";
 import Alert from "./Alert";
+import { useTranslation } from "react-i18next";
 
 const Mail = () => {
+  const { t, i18n } = useTranslation();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -113,21 +116,22 @@ const Mail = () => {
         }`}
       >
         <CustomTitle
-          title="nano new_mail"
+          title={t("contact.title")}
           margin="8"
           animationActivated={false}
           onAnimationEnd={() => {}}
+          currentLanguage={localStorage.getItem("currentLangage")}
         />
         <form className="flex flex-col gap-1" onSubmit={handleClick}>
           <label
             htmlFor="name"
             className="text-black dark:text-white text-2xl font-bold mt-4"
           >
-            Your Name
+            {t("contact.name.title")}{" "}
           </label>
           <input
             type="text"
-            placeholder="Ex: John"
+            placeholder={t("contact.name.placeholder")}
             id="name"
             name="name"
             className="text-white p-4 rounded-lg bg-gray-800 focus:outline-none shadow-md shadow-gray-900"
@@ -138,11 +142,11 @@ const Mail = () => {
             htmlFor="email"
             className="text-black dark:text-white text-2xl font-bold mt-4"
           >
-            Your Email
+            {t("contact.email.title")}{" "}
           </label>
           <input
             type="text"
-            placeholder="Ex: johndoe@gmail.com"
+            placeholder={t("contact.email.placeholder")}
             id="email"
             name="email"
             className="text-white p-4 rounded-lg bg-gray-800 focus:outline-none shadow-md shadow-gray-900"
@@ -153,11 +157,11 @@ const Mail = () => {
             htmlFor="message"
             className="text-black dark:text-white text-2xl font-bold mt-4"
           >
-            Your Message
+            {t("contact.message.title")}{" "}
           </label>
           <textarea
             id="message"
-            placeholder="Ex: Hello Logan, I'm writing to..."
+            placeholder={t("contact.message.placeholder")}
             name="message"
             className="text-white p-4 rounded-lg bg-gray-800 focus:outline-none shadow-md shadow-gray-900 h-48"
             onChange={(e) => setMessage(e.target.value)}
@@ -171,7 +175,7 @@ const Mail = () => {
             className="w-48 bg-green-700 text-white text-xl font-bold p-2 mt-4 rounded-md self-center"
             disabled={isSending}
           >
-            {isSending ? "Sending..." : "Send"}
+            {isSending ? "Sending..." : `${t("contact.send")}`}
           </button>
         </form>
       </div>

@@ -117,5 +117,22 @@
     "creator": "Made by Logan Brunet",
     "with": "with",
     "and": "and"
+  },
+  "contact": {
+    "title": "nano new_mail",
+    "name": {
+      "title": "Your Name",
+      "placeholder": "Ex : John"
+    },
+    "email": {
+      "title": "Your Email",
+      "placeholder": "Ex : johndoe@gmail.com"
+    },
+    "message": {
+      "title": "Your Message",
+      "placeholder": "Ex : Hello Logan, I'm writing to..."
+    },
+    "send": "Send",
+    "sending": "Sending..."
   }
 }

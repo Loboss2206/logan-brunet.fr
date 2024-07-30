@@ -39,7 +39,7 @@ const Menu = () => {
   };
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth > 975) {
+    if (window.innerWidth > 1024) {
       setMobileMenuOpen(false);
       setIsActive(false);
     }
@@ -63,9 +63,51 @@ const Menu = () => {
   return (
     <>
       <div className="menu fixed top-0 left-0 w-full z-50">
-        <div className="menu-container flex flex-col md2:flex-row md2:items-center justify-between px-8 bg-emerald-900 bg-opacity-90 dark:bg-opacity-80 text-white relative h-20">
+        <div className="menu-container flex flex-row lg:items-center justify-between px-8 bg-emerald-900 bg-opacity-90 dark:bg-opacity-80 text-white relative h-20">
+          <div className="hidden sm:flex lg:hidden items-center h-full space-x-8 ml-2">
+            <button
+              className="relative flex items-center justify-center"
+              type="button"
+              onClick={handleChangeLanguage}
+            >
+              <img
+                src={currentLanguage === "en" ? fr : en}
+                className="h-8 w-12"
+              />
+              <svg
+                className="absolute bottom-0 right-0 translate-x-3/4 translate-y-1/4"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.99268 12.984C4.44039 12.984 3.99268 13.4318 3.99268 13.984C3.99268 14.3414 4.18016 14.655 4.46214 14.8319L7.14976 17.5195C7.54029 17.91 8.17345 17.91 8.56398 17.5195C8.9545 17.129 8.9545 16.4958 8.56398 16.1053L7.44275 14.984H14.9927C15.545 14.984 15.9927 14.5363 15.9927 13.984C15.9927 13.4318 15.545 12.984 14.9927 12.984L5.04213 12.984C5.033 12.9839 5.02388 12.9839 5.01476 12.984H4.99268Z"
+                  fill="white"
+                />
+                <path
+                  d="M19.0076 11.0158C19.5599 11.0158 20.0076 10.5681 20.0076 10.0158C20.0076 9.65844 19.8201 9.34484 19.5381 9.16801L16.8505 6.48039C16.46 6.08987 15.8268 6.08987 15.4363 6.48039C15.0457 6.87092 15.0457 7.50408 15.4363 7.89461L16.5575 9.01583L9.00757 9.01583C8.45528 9.01583 8.00757 9.46355 8.00757 10.0158C8.00757 10.5681 8.45528 11.0158 9.00757 11.0158L18.9581 11.0158C18.9672 11.016 18.9764 11.016 18.9855 11.0158H19.0076Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <div className="ml-6">
+              <input
+                className="toggle--checkbox cursor-pointer"
+                type="checkbox"
+                id="toggle"
+                checked={isDarkTheme}
+                onChange={toggleTheme}
+              />
+              <label for="toggle" className="toggle--label cursor-pointer">
+                <span className="toggle--label-background"></span>
+              </label>
+            </div>
+          </div>
+
           <div
-            className={`order-1 md2:order-2 flex items-center justify-center absolute top-1/2 left-6 sm:left-1/2 transform sm:-translate-x-1/2 -translate-y-1/2`}
+            className={`order-1 lg:order-2 sm:mx-auto sm:my-auto flex items-center justify-center absolute sm:relative md:absolute top-1/2 sm:top-0 md:top-1/2 left-6 sm:left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 sm:-translate-y-0 md:-translate-y-1/2`}
           >
             <a href="about" className="block w-full h-full">
               <p className={`responsive-text text-green-500 font-bold m-0`}>
@@ -76,7 +118,7 @@ const Menu = () => {
 
           <div
             style={{ marginTop: `1.125rem` }}
-            className="md2:hidden absolute right-6 flex-row-reverse md2:order-2"
+            className="lg:hidden absolute right-6 flex-row-reverse md2:order-2"
           >
             <button
               onClick={toggleMobileMenu}
@@ -89,8 +131,7 @@ const Menu = () => {
               <span className="lineMenu"></span>
             </button>
           </div>
-
-          <nav className="hidden md2:flex md2:order-1 md2:mt-1 md2:space-x-6">
+          <nav className="hidden lg:flex md2:order-1 md2:mt-1 md2:space-x-6">
             <a href="about">
               <p
                 className={`animate-swing-hover text-white text-2xl font-bold py-2 duration-300 hover:scale-125`}
@@ -133,8 +174,7 @@ const Menu = () => {
               </svg>
             </button>
           </nav>
-
-          <div id="icons" className="hidden md2:flex md2:space-x-4 md2:order-4">
+          <div id="icons" className="hidden lg:flex md2:space-x-4 md2:order-4">
             {!isMobileMenuOpen && (
               <div className="md2:mt-1 mr-6">
                 <input
@@ -201,7 +241,7 @@ const Menu = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="mobile-menu border-2 border-white/25 bg-emerald-900 bg-opacity-90 dark:bg-opacity-80 rounded-b-2xl text-white px-8 py-4 md2:hidden flex flex-col items-center justify-center">
+          <div className="mobile-menu border-2 border-white/25 bg-emerald-900 bg-opacity-90 dark:bg-opacity-80 rounded-b-2xl text-white px-8 py-4 lg:hidden flex flex-col items-center justify-center">
             <nav className="flex space-x-4">
               <a href="about">
                 <p
@@ -264,7 +304,7 @@ const Menu = () => {
                 </svg>
               </a>
             </div>
-            <div className="flex space-x-8 mt-4 ml-6">
+            <div className="flex sm:hidden space-x-8 mt-4 ml-2">
               <button
                 className="relative flex items-center justify-center"
                 type="button"

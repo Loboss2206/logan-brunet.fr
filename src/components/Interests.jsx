@@ -29,6 +29,7 @@ const Interests = () => {
       <div className="flex flex-col w-full 2xl:w-2/3">
         <CustomTitle
           currentLanguage={localStorage.getItem("currentLangage")}
+          animationActivated={!isTitleAnimationComplete}
           title={t("interests.title")}
           margin="12"
           onAnimationEnd={() => setIsTitleAnimationComplete(true)}
