@@ -10,6 +10,8 @@
   },
   "projects": {
     "title": "ls ~/Projets",
+    "showMore": "Voir tous mes projets",
+    "showLess": "Voir moins de projets",
     "LutinVSMonstres": {
       "date": "Octobre 2021 - Janvier 2022",
       "title": "Lutin VS Monstres",

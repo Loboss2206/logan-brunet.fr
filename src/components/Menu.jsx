@@ -100,7 +100,7 @@ const Menu = () => {
                 checked={isDarkTheme}
                 onChange={toggleTheme}
               />
-              <label for="toggle" className="toggle--label cursor-pointer">
+              <label htmlFor="toggle" className="toggle--label cursor-pointer">
                 <span className="toggle--label-background"></span>
               </label>
             </div>
@@ -340,7 +340,10 @@ const Menu = () => {
                   checked={isDarkTheme}
                   onChange={toggleTheme}
                 />
-                <label for="toggle" className="toggle--label cursor-pointer">
+                <label
+                  htmlFor="toggle"
+                  className="toggle--label cursor-pointer"
+                >
                   <span className="toggle--label-background"></span>
                 </label>
               </div>

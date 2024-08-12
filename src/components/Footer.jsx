@@ -12,7 +12,9 @@ const Menu = () => {
         <motion.span className="flex justify-center">
           {t("footer.creator") + "\u00A0\u00A0"}
           <div>
-            <img src={cactus} width={size} height={size}></img>
+            <a href="https://dinorunner.com/" target="__blank" rel="noreferrer">
+              <img src={cactus} width={size} height={size}></img>
+            </a>
           </div>
           {"\u00A0\u00A0" + t("footer.with") + "\u00A0"}
         </motion.span>

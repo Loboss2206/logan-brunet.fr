@@ -54,19 +54,12 @@ const Education = () => {
           <div ref={educationRef} className="p-4 opacity-0 rounded-md mt-4">
             {education.map(
               (
-                {
-                  id,
-                  institution,
-                  degree,
-                  year,
-                  skills,
-                  specials,
-                  specialsWithImage,
-                },
+                { id, institution, year, skills, specials, specialsWithImage },
                 index
               ) => (
                 <div className="hidden md:block" key={id}>
                   <>
+                    <img></img>
                     <TreeBranch
                       key={"Degree" + id + index}
                       label={t(
