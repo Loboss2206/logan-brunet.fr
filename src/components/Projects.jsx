@@ -22,7 +22,9 @@ const Projects = () => {
     const newDisplay = !areAllProjectsDisplayed;
     setAreAllProjectsDisplayed(newDisplay);
 
-    if (newDisplay === false) window.location.href = "about#projects";
+    if (newDisplay === false) {
+      window.location.hash = "projects";
+    }
   };
 
   return (
