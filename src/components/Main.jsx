@@ -33,7 +33,10 @@ const Main = () => {
                 <Trans
                   i18nKey="main.firstP"
                   values={{ text_important }}
-                  components={{ span: <span className={text_important} /> }}
+                  components={{
+                    a: <a href="https://polytech.univ-cotedazur.fr/" />,
+                    span: <span className={text_important} />,
+                  }}
                 />
               </i>
             </motion.p>
@@ -43,7 +46,10 @@ const Main = () => {
                 <Trans
                   i18nKey="main.secondP"
                   values={{ text_important }}
-                  components={{ span: <span className={text_important} /> }}
+                  components={{
+                    a: <a href="https://amadeus.com/" />,
+                    span: <span className={text_important} />,
+                  }}
                 />
               </i>
             </motion.p>

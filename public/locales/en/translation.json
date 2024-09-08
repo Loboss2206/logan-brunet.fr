@@ -5,8 +5,8 @@
   },
   "main": {
     "hello": "Hello World ! I'm <span className='{{text_important}}'>Logan Brunet</span>,",
-    "firstP": "Student at <span className='{{text_important}}'>Polytech Nice-Sophia</span> in Computer Science. Mainly interested in <span className='{{text_important}}'>Cybersecurity</span>, and <span className='{{text_important}}'>Software Development</span>. I also enjoy traveling and exploring new technologies.",
-    "secondP": "Starting soon a new adventure as an apprentice developer at <span className='{{text_important}}'>Amadeus</span> on the <span className='{{text_important}}'>Sophia Antipolis</span> site."
+    "firstP": "Student at <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a> in Computer Science. Mainly interested in <span className='{{text_important}}'>Cybersecurity</span>, and <span className='{{text_important}}'>Software Development</span>. I also enjoy traveling and exploring new technologies.",
+    "secondP": "I'm also a <span className='{{text_important}}'>Full-Stack</span> developer apprentice at <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> on the <span className='{{text_important}}'>Sophia Antipolis</span> site."
   },
   "projects": {
     "title": "ls ~/Projects",

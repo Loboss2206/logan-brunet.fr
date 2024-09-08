@@ -5,8 +5,8 @@
   },
   "main": {
     "hello": "Salut tout le monde ! Je suis <span className='{{text_important}}'>Logan Brunet</span>,",
-    "firstP": "Étudiant à <span className='{{text_important}}'>Polytech Nice-Sophia</span> en Sciences Informatique. Principalement interessé par la <span className='{{text_important}}'>Cybersecurité</span> et le <span className='{{text_important}}'>Développement logiciel</span>. J'apprécie aussi beaucoup voyager et découvrir de nouvelles technologies.",
-    "secondP": "D'ailleurs, je commencerais bientôt une nouvelle aventure en tant qu'apprenti développeur à <span className='{{text_important}}'>Amadeus</span> sur le site de <span className='{{text_important}}'>Sophia Antipolis</span>."
+    "firstP": "Étudiant à <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a> en Sciences Informatique. Principalement interessé par la <span className='{{text_important}}'>Cybersecurité</span> et le <span className='{{text_important}}'>Développement logiciel</span>. J'apprécie aussi beaucoup voyager et découvrir de nouvelles technologies.",
+    "secondP": "D'ailleurs, je suis aussi apprenti développeur <span className='{{text_important}}'>Full-Stack</span> à <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> sur le site de <span className='{{text_important}}'>Sophia Antipolis</span>."
   },
   "projects": {
     "title": "ls ~/Projets",
