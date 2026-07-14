@@ -1,0 +1,51 @@
+name: CI/CD - Build & Deploy Portfolio (Local Build)
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'src/**'
+      - 'nginx/**'
+      - 'Dockerfile'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Deploy and Build on Oracle Cloud VM
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          EMAIL_SERVICE_ID: ${{ secrets.EMAIL_SERVICE_ID }}
+          EMAIL_TEMPLATE_ID: ${{ secrets.EMAIL_TEMPLATE_ID }}
+          EMAIL_USER_ID: ${{ secrets.EMAIL_USER_ID }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: EMAIL_SERVICE_ID,EMAIL_TEMPLATE_ID,EMAIL_USER_ID
+          script: |
+            cd /home/ubuntu/logan-brunet.fr
+            git pull origin main
+            
+            docker build \
+              --build-arg EMAIL_SERVICE_ID="$EMAIL_SERVICE_ID" \
+              --build-arg EMAIL_TEMPLATE_ID="$EMAIL_TEMPLATE_ID" \
+              --build-arg EMAIL_USER_ID="$EMAIL_USER_ID" \
+              -t logan-brunet.fr:latest .
+
+            docker rm -f portfolio || true
+
+            docker run -d \
+              --name portfolio \
+              --restart always \
+              -p 80:80 -p 443:443 \
+              -v $(pwd)/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro \
+              -v $(pwd)/nginx/data/certbot/www:/var/www/certbot \
+              -v $(pwd)/nginx/data/certbot/conf:/etc/letsencrypt \
+              logan-brunet.fr:latest
+
+            docker image prune -f
