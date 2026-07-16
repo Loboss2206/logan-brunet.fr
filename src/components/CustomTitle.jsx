@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useSpring, animated } from "react-spring";
 import PropTypes from "prop-types";
+import { animated, useSpring } from "react-spring";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
@@ -65,7 +65,7 @@ const CustomTitle = ({ title, margin, onAnimationEnd, animationActivated }) => {
       setTimeout(() => {
         setVisibleText(t(title).substring(0, index));
         animateText(index + 1);
-      }, 150);
+      }, 75);
     } else {
       setIsAnimationFinished(true);
     }

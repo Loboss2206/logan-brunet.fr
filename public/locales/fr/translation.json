@@ -4,9 +4,9 @@
     "contact": "CONTACT"
   },
   "main": {
-    "hello": "Salut tout le monde ! Je suis <span className='{{text_important}}'>Logan Brunet</span>,",
-    "firstP": "Étudiant à <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a> en Sciences Informatique. Principalement interessé par la <span className='{{text_important}}'>Cybersecurité</span> et le <span className='{{text_important}}'>Développement logiciel</span>. J'apprécie aussi beaucoup voyager et découvrir de nouvelles technologies.",
-    "secondP": "D'ailleurs, je suis aussi apprenti développeur <span className='{{text_important}}'>Full-Stack</span> à <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> sur le site de <span className='{{text_important}}'>Sophia Antipolis</span>."
+    "hello": "Salut tout le monde ! Je suis <span className='{{text_important}}'>Logan Brunet,</span>",
+    "firstP": "Étudiant à <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a> en Sciences Informatiques. Pour ma dernière année, j'ai suivi le <span className='{{text_important}}'>parcours SSE</span> (Sustainable Software Engineering) afin d'allier des compétences poussées en <span className='{{text_important}}'>Architecture Logicielle</span> et des notions clés de <span className='{{text_important}}'>Green IT</span>.",
+    "secondP": "En parallèle, je suis développeur <span className='{{text_important}}'>Full-Stack</span> en apprentissage chez <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> (Valbonne) jusqu'en Septembre 2026. Je suis donc ouvert à de <span className='{{text_important}}'>nouvelles opportunités</span> à partir d'<span className='{{text_important}}'>Octobre 2026 !</span>"
   },
   "projects": {
     "title": "ls ~/Projets",
@@ -56,6 +56,36 @@
       "date": "Février 2024 - Juin 2024",
       "title": "Klamar",
       "description": "Ce projet a été réalisé pour le cours PS6 à Polytech Nice-Sophia. Le but était de créer un site web pour aider les personnes atteintes de la maladie d'Alzheimer en leur offrant la possibilité de jouer à un quiz (et à 2 autres jeux surprises) pour stimuler leur mémoire."
+    },
+    "SophiaEats": {
+      "date": "Septembre 2024 - Décembre 2024",
+      "title": "SophiaEats",
+      "description": "SophiaEats est un projet universitaire visant à développer une plateforme de livraison de repas sur le campus, entièrement décentralisée en microservices autonomes (utilisateurs, commandes, restaurants et une passerelle API). Développé avec un accent rigoureux sur la qualité logicielle (TDD, CI/CD et tests Cucumber), le système met en avant un flux de commande groupée avancé et fluide. Les participants peuvent rejoindre un groupe via un code partagé, choisir leurs repas et gérer individuellement leurs suppléments ou réductions, tout en bénéficiant d'un système de panier et de paiement optimisé."
+    },
+    "BenefitHub": {
+      "date": "Janvier 2025 - Avril 2025",
+      "title": "BenefitHub",
+      "description": "BenefitHub est un projet universitaire équilibrant la conception d'une architecture orientée services (ISA) et la mise en place d'une infrastructure d'intégration continue (DevOps). Pour la partie ISA, nous avons développé un écosystème modulaire sous Java 21, Maven et PostgreSQL, comprenant un backend, une interface CLI interactive et des microservices Node.js simulant une banque et un partenaire externe. Pour la partie DevOps, nous avons déployé un pipeline Jenkins automatisé qui gère la publication de nos packages sur JFrog Artifactory, la conteneurisation multi-services avec Docker-Compose, et le déploiement sur une machine virtuelle dédiée."
+    },
+    "HALO": {
+      "date": "Septembre 2025 - Novembre 2025",
+      "title": "HALO",
+      "description": "HALO est un projet universitaire destiné à sécuriser le maintien à domicile des personnes âgées grâce à l'IoT. Il s'appuie sur des capteurs connectés qui transmettent des données de santé en temps réel à un serveur central. L'application génère des graphiques de suivi clairs et envoie des rappels automatiques aux médecins ou des alertes en cas d'anomalies, garantissant une réactivité médicale optimale."
+    },
+    "AuSecoursJim": {
+      "date": "Septembre 2025 - Novembre 2025",
+      "title": "Au Secours Jim",
+      "description": "Au Secours Jim est un projet universitaire de borne de commande (type restauration rapide) basé sur des microservices, conçu pour comparer deux architectures : l’une exploitant un pattern BFF (Backend-for-Frontend) et l’autre en communication directe sans intermédiaire. L’application gère l'intégralité du parcours utilisateur, du choix des articles et la personnalisation fine de leurs ingrédients au suivi en temps réel de la commande après paiement. Elle permet de diviser l'addition selon différents paramètres et intègre une fonctionnalité de commande de groupe : à partir d'un menu prédéfini, chaque participant choisit ses articles et règle lui-même ses suppléments éventuels."
+    },
+    "MLLSSlideDeckML": {
+      "date": "Décembre 2025 - Janvier 2026",
+      "title": "MLLS SlideDeckML",
+      "description": "SlideDeckMl est un projet universitaire conçu pour créer un langage de modélisation dédié (DSL) afin de générer des présentations web dynamiques, modernes et hautement interactives. Basé sur Langium et Node.js, il permet de structurer des diapositives à l'aide d'un système de mise en page par grilles (Boxes), de réutiliser des composants et d'intégrer du contenu riche comme des équations LaTeX (via KaTeX), du code avec coloration syntaxique et des vidéos. Le framework se distingue par ses fonctionnalités d'interactivité en temps réel, notamment des outils d'annotation en direct et un système de LiveQuiz connecté par QR Codes."
+    },
+    "LoupsGarousGMAssistant": {
+      "date": "Juillet 2025 - En cours",
+      "title": "Loups Garous GM Assistant",
+      "description": "Développée en tant que projet personnel, cette application sert d'outil de suivi pour le meneur de jeu lors d'une partie de Loup-Garou. Elle permet de consigner en temps réel les rôles et les actions des joueurs. C'est l'assistant idéal pour fluidifier le déroulement de la partie et s'assurer qu'aucune décision cruciale ne soit oubliée pendant la nuit."
     }
   },
   "skills": {
@@ -83,7 +113,15 @@
         "Networks": "Réseaux"
       },
       "specials": {
-        "ProfesionnalEnglishLevel(TOEIC915)": "Niveau d'anglais professionnel (TOEIC 915)"
+        "ProfesionnalEnglishLevel(TOEIC935)": "Niveau d'anglais professionnel (TOEIC 935)",
+        "3-monthInternshipatDaNangInternationalInstituteofTechnology(Danang,Vietnam)": {
+          "title": "Stage de 3 mois à l'Institut International de Technologie de Da Nang (Vietnam)",
+          "description": "Développement d'une application web de visualisation des risques d'inondation à Da Nang via une carte de chaleur (heatmap). Le système cartographie les zones critiques en traitant et analysant les données collectées par des antennes existantes."
+        },
+        "2-yearApprenticeshipatAmadeus(SophiaAntipolis,France)": {
+          "title": "Apprentissage de 2 ans à Amadeus (Sophia Antipolis, France)",
+          "description": "J'ai développé un outil de simulation personnalisé pour les tests E2E et construit une application de configuration pour modifier les propriétés utiles des applications. De plus, j'ai résolu diverses tâches en attente, fournissant des corrections de bugs, des améliorations de l'interface utilisateur, un renforcement de la sécurité et des optimisations de performance."
+        }
       }
     },
     "IUTdeNiceFabron": {
@@ -102,8 +140,8 @@
   },
   "interests": {
     "title": "locate intérêts",
-    "Volley-ball": {
-      "description": "Je joue au volley-ball toutes les semaines."
+    "Sports": {
+      "description": "Je joue au padel, au football et au volleyball autant que je peux. Je aime aussi regarder le sport à la télé, surtout le football."
     },
     "Travelling": {
       "title": "Voyages",

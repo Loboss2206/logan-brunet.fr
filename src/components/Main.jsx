@@ -1,8 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Trans } from "react-i18next";
-
 import profileImage from "../assets/others/profile.jpg";
+import { Trans } from "react-i18next";
+import { motion } from "framer-motion";
 
 const Main = () => {
   const text = "text-black dark:text-white";
@@ -54,7 +53,7 @@ const Main = () => {
               </i>
             </motion.p>
           </motion.div>
-          <motion.div className="hover:animate-spin">
+          <motion.div>
             <img
               src={profileImage}
               alt="profile img"

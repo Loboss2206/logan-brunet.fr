@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from "react";
 import CustomTitle from "./CustomTitle";
-import hinata from "../assets/interests/hinata.png";
+import InterestBox from "./InterestBox";
+import React, { useEffect, useRef } from "react";
 import ball from "../assets/interests/ball.png";
+import hinata from "../assets/interests/hinata.png";
+import japan from "../assets/interests/japan.png";
+import narutomaki from "../assets/interests/narutomaki.png";
 import plane from "../assets/interests/plane.png";
 import plane2 from "../assets/interests/earth.png";
-import narutomaki from "../assets/interests/narutomaki.png";
-import japan from "../assets/interests/japan.png";
-import InterestBox from "./InterestBox";
 import { useTranslation } from "react-i18next";
 
 const Interests = () => {
@@ -61,7 +61,7 @@ const Interests = () => {
                 </a>
               </div>
               <p className="animate-swing dark:text-white text-4xl font-bold">
-                Volley-ball
+                Sports
               </p>
             </div>
             <div className="mx-auto flex flex-col justify-end h-96 px-4">
@@ -115,8 +115,8 @@ const Interests = () => {
           <div className="md:hidden flex flex-col bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-lg p-2">
             <InterestBox
               id="1"
-              title="Volley-ball"
-              description={t("interests.Volley-ball.description")}
+              title="Sports"
+              description={t("interests.Sports.description")}
               srcImage={ball}
               link="http://www.ffvb.org/"
             />

@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
+import React, { useEffect, useRef, useState } from "react";
 import Skill from "./Skill";
-
 import langagesMock from "../datas/langages";
 import osMock from "../datas/os";
 import toolsMock from "../datas/tools";
-
 import { useTranslation } from "react-i18next";
 
 const Skills = () => {
@@ -38,13 +36,13 @@ const Skills = () => {
 
   useEffect(() => {
     if (isThirdTitleAnimationComplete) {
-      osRef.current.classList.add("fade-in");
+      toolsRef.current.classList.add("fade-in");
     }
   }, [isThirdTitleAnimationComplete]);
 
   useEffect(() => {
     if (isFourthTitleAnimationComplete) {
-      toolsRef.current.classList.add("fade-in");
+      osRef.current.classList.add("fade-in");
     }
   }, [isFourthTitleAnimationComplete]);
 
@@ -91,14 +89,14 @@ const Skills = () => {
           <>
             <CustomTitle
               currentLanguage={localStorage.getItem("currentLangage")}
-              title={t(`skills.os.title`)}
+              title={t(`skills.tools.title`)}
               margin="12"
               onAnimationEnd={() => setIsThirdTitleAnimationComplete(true)}
               animationActivated={!isThirdTitleAnimationComplete}
             />
             {isThirdTitleAnimationComplete && (
-              <div ref={osRef} className={skillBoxesStyle}>
-                {os.map(({ id, imageSrc, title, link }) => (
+              <div ref={toolsRef} className={skillBoxesStyle}>
+                {tools.map(({ id, imageSrc, title, link }) => (
                   <Skill
                     key={id}
                     imageSrc={imageSrc}
@@ -114,14 +112,14 @@ const Skills = () => {
           <>
             <CustomTitle
               currentLanguage={localStorage.getItem("currentLangage")}
-              title={t(`skills.tools.title`)}
+              title={t(`skills.os.title`)}
               margin="12"
               onAnimationEnd={() => setIsFourthTitleAnimationComplete(true)}
               animationActivated={!isFourthTitleAnimationComplete}
             />
             {isFourthTitleAnimationComplete && (
-              <div ref={toolsRef} className={skillBoxesStyle}>
-                {tools.map(({ id, imageSrc, title, link }) => (
+              <div ref={osRef} className={skillBoxesStyle}>
+                {os.map(({ id, imageSrc, title, link }) => (
                   <Skill
                     key={id}
                     imageSrc={imageSrc}

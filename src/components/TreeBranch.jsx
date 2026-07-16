@@ -7,6 +7,8 @@ const TreeBranch = ({
   empty,
   firstPipe,
   secondPipe,
+  xlPipe,
+  mPipe
 }) => {
   const marginLeft = `3.5rem`;
 
@@ -32,7 +34,7 @@ const TreeBranch = ({
         <>
           {depth >= 1 && (
             <div className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap font-medium">
-              {firstPipe ? <span className="tree-pipe">| </span> : "\u00A0"}
+              {firstPipe ? (xlPipe ? <span className="tree-pipe-xl">| </span> : <span className="tree-pipe">| </span>) : "\u00A0"}
             </div>
           )}
           {depth >= 2 && (
@@ -40,18 +42,18 @@ const TreeBranch = ({
               style={{ marginLeft: marginLeft }}
               className="text-3xl my-0 text-black dark:text-white inline-block whitespace-nowrap font-medium"
             >
-              {secondPipe ? <span className="tree-pipe">| </span> : "\u00A0"}
+              {secondPipe ? (xlPipe ? <span className="tree-pipe-xl">| </span> : <span className="tree-pipe">| </span>) : "\u00A0"}
             </div>
           )}
 
           <div
             style={{ marginLeft: `${depth != 0 ? marginLeft : ""}` }}
-            className={`text-3xl my-0 ${textColorClass} inline-block`}
+            className={`text-3xl my-0 ${textColorClass} flex items-start`}
           >
             <span
-              className={`mr-2 text-black dark:text-white whitespace-nowrap font-medium`}
+              className="mr-2 text-black dark:text-white whitespace-nowrap font-medium flex-shrink-0"
             >
-              <span className={`${isLast ? "tree-pipe3" : "tree-pipe2"}`}>
+              <span className={isLast ? "tree-pipe3" : xlPipe ? "tree-pipe-xl" : mPipe ? "tree-pipe-m" : "tree-pipe2"}>
                 |{" "}
               </span>
               <span className="tree-pipe-horizontal">-</span>
@@ -59,9 +61,8 @@ const TreeBranch = ({
               <span className="tree-pipe-horizontal">-{"\u00A0"}</span>
             </span>
             <span
-              className={`${textColorClass} word-wrap-break-word ${
-                color != "white" && color != "black" ? "font-semibold" : ""
-              }`}
+              className={`${textColorClass} break-words ${color !== "white" && color !== "black" ? "font-semibold" : ""
+                }`}
             >
               {label}
             </span>

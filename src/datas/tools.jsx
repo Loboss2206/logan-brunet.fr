@@ -1,12 +1,16 @@
+import android_studio from "../assets/tools/android-studio.png";
+import docker from "../assets/tools/docker.svg";
 import git from "../assets/tools/git.svg";
 import github from "../assets/tools/github.svg";
 import gitlab from "../assets/tools/gitlab.svg";
-import vsc from "../assets/tools/vscode.svg";
 import intellij from "../assets/tools/intellij.svg";
-import android_studio from "../assets/tools/android-studio.png";
+import jenkins from "../assets/tools/jenkins.png";
+import jira from "../assets/tools/jira.png";
+import kafka from "../assets/tools/kafka.svg";
 import notion from "../assets/tools/notion.png";
+import oracle_cloud from "../assets/tools/oracle-cloud.png";
 import postman from "../assets/tools/postman.svg";
-import docker from "../assets/tools/docker.svg";
+import vsc from "../assets/tools/vscode.svg";
 
 const tools = [
     {
@@ -30,39 +34,63 @@ const tools = [
     },
     {
         id: 4,
-        title: "VS Code",
-        link: "https://code.visualstudio.com/",
-        imageSrc: vsc,
+        title: "Docker",
+        link: "https://www.docker.com/",
+        imageSrc: docker,
     },
     {
         id: 5,
-        title: "IntelliJ",
-        link: "https://www.jetbrains.com/idea/",
-        imageSrc: intellij,
+        title: "Jenkins",
+        link: "https://www.jenkins.io/",
+        imageSrc: jenkins,
     },
     {
         id: 6,
-        title: "Android Studio",
-        link: "https://developer.android.com/studio",
-        imageSrc: android_studio,
+        title: "Jira",
+        link: "https://www.atlassian.com/software/jira",
+        imageSrc: jira,
     },
     {
         id: 7,
-        title: "Notion",
-        link: "https://www.notion.so/",
-        imageSrc: notion,
+        title: "Kafka",
+        link: "https://kafka.apache.org/",
+        imageSrc: kafka,
     },
     {
         id: 8,
+        title: "Oracle Cloud",
+        link: "https://www.oracle.com/cloud/",
+        imageSrc: oracle_cloud,
+    },
+    {
+        id: 9,
         title: "Postman",
         link: "https://www.postman.com/",
         imageSrc: postman,
     },
     {
-        id: 9,
-        title: "Docker",
-        link: "https://www.docker.com/",
-        imageSrc: docker,
+        id: 10,
+        title: "Notion",
+        link: "https://www.notion.so/",
+        imageSrc: notion,
+    },
+    {
+        id: 11,
+        title: "VS Code",
+        link: "https://code.visualstudio.com/",
+        imageSrc: vsc,
+    },
+    {
+        id: 12,
+        title: "IntelliJ",
+        link: "https://www.jetbrains.com/idea/",
+        imageSrc: intellij,
+    },
+    {
+        id: 13,
+        title: "Android Studio",
+        link: "https://developer.android.com/studio",
+        imageSrc: android_studio,
     },
 ];
 

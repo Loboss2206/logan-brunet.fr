@@ -27,6 +27,36 @@ body {
   transform: scaleX(2.15);
 }
 
+.tree-pipe-m {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: scaleY(2);
+}
+
+@media (max-width: 800px) {
+  .tree-pipe-m {
+    transform: scaleY(3);
+  }
+}
+
+.tree-pipe-xl {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: scaleY(6);
+}
+
+@media (max-width: 1300px) {
+  .tree-pipe-xl {
+    transform: scaleY(12);
+  }
+}
+
+@media (max-width: 900px) {
+  .tree-pipe-xl {
+    transform: scaleY(15);
+  }
+}
+
 .limit7lines {
   overflow: hidden;
   text-overflow: ellipsis;

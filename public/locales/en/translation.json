@@ -4,9 +4,9 @@
     "contact": "CONTACT"
   },
   "main": {
-    "hello": "Hello World ! I'm <span className='{{text_important}}'>Logan Brunet</span>,",
-    "firstP": "Student at <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a> in Computer Science. Mainly interested in <span className='{{text_important}}'>Cybersecurity</span>, and <span className='{{text_important}}'>Software Development</span>. I also enjoy traveling and exploring new technologies.",
-    "secondP": "I'm also a <span className='{{text_important}}'>Full-Stack</span> developer apprentice at <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> on the <span className='{{text_important}}'>Sophia Antipolis</span> site."
+    "hello": "Hell World! I'm <span className='{{text_important}}'>Logan Brunet,</span>",
+    "firstP": "A Computer Science student at <a target='_blank' rel='noreferrer' href='https://polytech.univ-cotedazur.fr/'><span className='{{text_important}}'>Polytech Nice-Sophia</span></a>. For my final year, I followed the <span className='{{text_important}}'>SSE track</span> (Sustainable Software Engineering) to combine advanced skills in <span className='{{text_important}}'>Software Architecture</span> with key concepts of <span className='{{text_important}}'>Green IT</span>.",
+    "secondP": "Alongside my studies, I am a <span className='{{text_important}}'>Full-Stack</span> developer apprentice at <a target='_blank' rel='noreferrer' href='https://amadeus.com/'><span className='{{text_important}}'>Amadeus</span></a> (Valbonne) until September 2026. I am therefore open to <span className='{{text_important}}'>new opportunities</span> starting in <span className='{{text_important}}'>October 2026!</span>"
   },
   "projects": {
     "title": "ls ~/Projects",
@@ -56,6 +56,36 @@
       "date": "February 2024 - June 2024",
       "title": "Klamar",
       "description": "This project was done for the PS6 course at Polytech Nice-Sophia. The goal was to create a website to help people with Alzheimer's disease by providing them the possibility to play a quiz (and 2 other surprise games) to stimulate their memory."
+    },
+    "SophiaEats": {
+      "date": "September 2024 - December 2024",
+      "title": "SophiaEats",
+      "description": "SophiaEats is a university project aimed at developing a campus food delivery platform, fully decentralized into autonomous microservices (users, orders, restaurants, and an API gateway). Developed with a rigorous focus on software quality (TDD, CI/CD, and Cucumber testing), the system highlights an advanced and seamless group-ordering workflow. Participants can join a group using a shared code, select their meals, and individually manage their own extra toppings or discounts, all while benefiting from an optimized cart and payment system."
+    },
+    "BenefitHub": {
+      "date": "January 2025 - April 2025",
+      "title": "BenefitHub",
+      "description": "BenefitHub is an academic project balancing service-oriented architecture design (ISA) and the implementation of a continuous integration infrastructure (DevOps). For the ISA part, we developed a modular ecosystem using Java 21, Maven, and PostgreSQL, featuring a backend, an interactive CLI, and Node.js microservices simulating a bank and an external partner. For the DevOps part, we deployed an automated Jenkins pipeline that manages publishing our packages to JFrog Artifactory, multi-service containerization with Docker-Compose, and deployment onto a dedicated virtual machine."
+    },
+    "HALO": {
+      "date": "September 2025 - November 2025",
+      "title": "HALO",
+      "description": "HALO is a university project aimed at securing home care for the elderly through IoT. It relies on connected sensors that transmit health data in real time to a central server. The application generates clear tracking charts and sends automated reminders to doctors or alerts in case of anomalies, ensuring optimal medical responsiveness."
+    },
+    "AuSecoursJim": {
+      "date": "September 2025 - November 2025",
+      "title": "Au Secours Jim",
+      "description": "Au Secours Jim is a university project featuring an interactive ordering kiosk (fast-food style) based on microservices, designed to compare two architectural patterns: one utilizing a BFF (Backend-for-Frontend) and the other relying on direct communication without any intermediary. The application manages the entire user journey, from item selection and fine-grained ingredient customization to real-time order tracking post-payment. It allows splitting the bill based on various parameters and integrates a group ordering feature: from a predefined menu, each participant selects their items and pays for any extra toppings or sides they add."
+    },
+    "MLLSSlideDeckML": {
+      "date": "December 2025 - January 2026",
+      "title": "MLLS SlideDeckML",
+      "description": "SlideDeckMl is a university project designed to build a dedicated Domain-Specific Language (DSL) for creating dynamic, modern, and highly interactive web presentations. Built with Langium and Node.js, it allows users to structure slides using a grid layout system (Boxes), leverage reusable components, and embed rich content such as LaTeX equations (via KaTeX), syntax-highlighted code, and videos. The framework stands out with its real-time interactivity features, including live presentation annotation tools and an audience-engaging LiveQuiz system connected via QR Codes."
+    },
+    "LoupsGarousGMAssistant": {
+      "date": "July 2025 - Present",
+      "title": "Loups Garous GM Assistant",
+      "description": "Developed as a personal project, this application serves as a tracking tool for the Game Master during a game of Werewolf. It allows logging players' roles and actions in real time. It is the perfect assistant to streamline the flow of the game and ensure that no crucial decision is missed during the night phase."
     }
   },
   "skills": {
@@ -84,7 +114,15 @@
         "Networks": "Networks"
       },
       "specials": {
-        "ProfesionnalEnglishLevel(TOEIC915)": "Profesionnal English Level (TOEIC 915)"
+        "ProfesionnalEnglishLevel(TOEIC935)": "Profesionnal English Level (TOEIC 935)",
+        "3-monthInternshipatDaNangInternationalInstituteofTechnology(Danang,Vietnam)": {
+          "title": "3-month Internship at Da Nang International Institute of Technology (Vietnam)",
+          "description": "Development of a web application that visualizes potential flood risks in Da Nang using a heatmap. The system maps out critical areas by processing and analyzing data collected from existing antennas."
+        },
+        "2-yearApprenticeshipatAmadeus(SophiaAntipolis,France)": {
+          "title": "2-year Apprenticeship at Amadeus (Sophia Antipolis, France)",
+          "description": "I developed a custom mocking tool for E2E tests and built a configuration app to modify useful properties for the apps. Additionally, I resolved diverse backlog tasks, delivering bug fixes, UI enhancements, security hardening, and performance optimizations."
+        }
       }
     },
     "IUTdeNiceFabron": {
@@ -103,8 +141,8 @@
   },
   "interests": {
     "title": "locate interests",
-    "Volley-ball": {
-      "description": "I play volley-ball every weeks."
+    "Sports": {
+      "description": "I play padel, football and volleyball as often as I can. I also like to watch sports on TV, especially football."
     },
     "Travelling": {
       "title": "Travelling",

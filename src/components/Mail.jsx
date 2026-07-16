@@ -1,14 +1,19 @@
-import { useState, useRef, useEffect } from "react";
-import emailjs from "emailjs-com";
-import CustomTitle from "./CustomTitle";
-import { emailServiceId, emailTemplateId, emailUserId } from "../emailjs-id";
-import ReCAPTCHA from "react-google-recaptcha";
-import { FadeLoader } from "react-spinners";
 import Alert from "./Alert";
+import CustomTitle from "./CustomTitle";
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "emailjs-com";
+import { FadeLoader } from "react-spinners";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import {
+  emailServiceId,
+  emailTemplateId,
+  emailUserId
+} from "../emailjs-id.jsx";
+
 const Mail = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -111,15 +116,14 @@ const Mail = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col w-full 2xl:w-2/3 flex-grow p-4 mt-4 ${
-          isSending ? "hidden" : ""
-        }`}
+        className={`flex flex-col w-full 2xl:w-2/3 flex-grow p-4 mt-4 ${isSending ? "hidden" : ""
+          }`}
       >
         <CustomTitle
           title={t("contact.title")}
           margin="8"
           animationActivated={false}
-          onAnimationEnd={() => {}}
+          onAnimationEnd={() => { }}
           currentLanguage={localStorage.getItem("currentLangage")}
         />
         <form className="flex flex-col gap-1" onSubmit={handleClick}>

@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import Tag from "./Tag";
 
 const Project = ({ id, imageSrc, date, title, description, link, tags }) => {
@@ -47,7 +47,7 @@ const Project = ({ id, imageSrc, date, title, description, link, tags }) => {
             {description}
           </p>
         </div>
-        <div className="flex flex-wrap-reverse gap-2 justify-end p-4 mt-auto">
+        <div className="flex flex-wrap gap-2 justify-end p-4 mt-auto">
           {tags.map(({ tagName, tagImage }) => (
             <Tag key={tagName} tagName={tagName} tagImage={tagImage} />
           ))}

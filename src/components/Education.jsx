@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
+import EducationBox from "./EducationBox";
 import TreeBranch from "./TreeBranch";
 import educationMock from "../datas/education";
-import EducationBox from "./EducationBox";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Education = () => {
@@ -118,11 +118,11 @@ const Education = () => {
                                 )}.skills.${skill.replaceAll(" ", "")}`
                               )
                                 ? t(
-                                    `education.${institution.replaceAll(
-                                      " ",
-                                      ""
-                                    )}.skills.${skill.replaceAll(" ", "")}`
-                                  )
+                                  `education.${institution.replaceAll(
+                                    " ",
+                                    ""
+                                  )}.skills.${skill.replaceAll(" ", "")}`
+                                )
                                 : skill
                             }
                             isLast={skillIndex === skills.length - 1}
@@ -156,6 +156,7 @@ const Education = () => {
                             depth="1"
                             color="white"
                             showPipe={true}
+                            mPipe={specialsWithImage.length === 1}
                           />
                         ))}
                       </>
@@ -163,46 +164,87 @@ const Education = () => {
 
                     {specialsWithImage.length > 0 && (
                       <>
-                        {specialsWithImage.map((special, specialIndex) => (
-                          <div key={id + "specialImg" + specialIndex}>
-                            <TreeBranch
-                              key={id + special.title + specialIndex}
-                              label={t(
-                                `education.${institution.replaceAll(
-                                  " ",
-                                  ""
-                                )}.specials.${special.title.replaceAll(
-                                  " ",
-                                  ""
-                                )}.title`
-                              )}
-                              firstPipe={index !== education.length - 1}
-                              secondPipe={false}
-                              isLast={
-                                specialIndex === specialsWithImage.length - 1
-                              }
-                              depth="1"
-                              color="white"
-                              showPipe={true}
-                            />
-                            <a
-                              href={special.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                display: "inline-block",
-                                marginLeft: "5.7em",
-                                marginTop: "0.5vw",
-                              }}
-                            >
-                              <img
-                                src={special.srcImage}
-                                alt={t(`education.specials.${special.title}`)}
-                                className="h-36 rounded-lg bg-gray-200 border-4 border-gray-400 p-2"
+                        {specialsWithImage.map((special, specialIndex) => {
+                          const isLastImg = specialIndex === specialsWithImage.length - 1;
+                          const continuesDown = index !== education.length - 1;
+
+                          return (
+                            <div key={id + "specialImg" + specialIndex}>
+                              <TreeBranch
+                                key={id + special.title + specialIndex}
+                                label={t(
+                                  `education.${institution.replaceAll(
+                                    " ",
+                                    ""
+                                  )}.specials.${special.title.replaceAll(" ", "")}.title`
+                                )}
+                                firstPipe={continuesDown}
+                                secondPipe={false}
+                                isLast={isLastImg}
+                                depth="1"
+                                color="white"
+                                showPipe={true}
+                                xlPipe={true}
                               />
-                            </a>
-                          </div>
-                        ))}
+                              <TreeBranch
+                                key={id + special.title + specialIndex + "desc"}
+                                label={t(
+                                  `education.${institution.replaceAll(
+                                    " ",
+                                    ""
+                                  )}.specials.${special.title.replaceAll(
+                                    " ",
+                                    ""
+                                  )}.description`
+                                )}
+                                firstPipe={continuesDown}
+                                secondPipe={!isLastImg}
+                                isLast={true}
+                                depth="2"
+                                color="white"
+                                showPipe={false}
+                                xlPipe={true}
+                              />
+                              <div className="flex flex-row">
+                                <div className="text-3xl text-black dark:text-white font-medium flex flex-col leading-normal">
+                                  {Array.from({ length: 4 }).map((_, i) => (
+                                    <span key={i} className={continuesDown ? "tree-pipe" : ""}>
+                                      {continuesDown ? "|" : "\u00A0"}
+                                    </span>
+                                  ))}
+                                </div>
+                                {!isLastImg && (
+                                  <div
+                                    style={{ marginLeft: "3.5rem" }}
+                                    className="text-3xl text-black dark:text-white font-medium flex flex-col leading-normal"
+                                  >
+                                    {Array.from({ length: 4 }).map((_, i) => (
+                                      <span key={i} className="tree-pipe">
+                                        |
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                                <a
+                                  href={special.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  style={{
+                                    display: "inline-block",
+                                    marginLeft: "4.2em",
+                                    marginTop: "0.5vw",
+                                  }}
+                                >
+                                  <img
+                                    src={special.srcImage}
+                                    alt={t(`education.specials.${special.title}`)}
+                                    className="h-36 rounded-lg bg-gray-200 border-4 border-gray-400 p-2"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </>
                     )}
 
@@ -244,11 +286,11 @@ const Education = () => {
                         )}.skills.${skill.replaceAll(" ", "")}`
                       )
                         ? t(
-                            `education.${institution.replaceAll(
-                              " ",
-                              ""
-                            )}.skills.${skill.replaceAll(" ", "")}`
-                          )
+                          `education.${institution.replaceAll(
+                            " ",
+                            ""
+                          )}.skills.${skill.replaceAll(" ", "")}`
+                        )
                         : skill
                     )}
                     specials={specials.map((special) =>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
 import CustomTitle from "./CustomTitle";
 import Project from "./Project";
+import React, { useEffect, useRef, useState } from "react";
 import projectsMock from "../datas/projects";
 import { useTranslation } from "react-i18next";
 
@@ -43,6 +43,17 @@ const Projects = () => {
         />
         {isTitleAnimationComplete && (
           <div ref={projectsRef} className="opacity-0">
+            <button
+              className="text-2xl font-bold text-white w-full bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-md transition-transform transform hover:scale-105 h-12 mt-4"
+              onClick={changeDisplayProjects}
+            >
+              {t(
+                `${areAllProjectsDisplayed
+                  ? "projects.showLess"
+                  : "projects.showMore"
+                }`
+              )}
+            </button>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-0 py-4 mt-4">
               {projects
                 .map(
@@ -72,18 +83,6 @@ const Projects = () => {
                 .sort((a, b) => (a.props.id > b.props.id ? -1 : 1))
                 .slice(0, areAllProjectsDisplayed ? undefined : 3)}{" "}
             </div>
-            <button
-              className="text-2xl font-bold text-white w-full bg-gray-900/90 dark:bg-gray-800/80 shadow-lg shadow-gray-900/80 dark:shadow-white/50 rounded-md transition-transform transform hover:scale-105 h-12 mt-4"
-              onClick={changeDisplayProjects}
-            >
-              {t(
-                `${
-                  areAllProjectsDisplayed
-                    ? "projects.showLess"
-                    : "projects.showMore"
-                }`
-              )}
-            </button>
           </div>
         )}
       </div>

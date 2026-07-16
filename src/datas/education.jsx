@@ -3,7 +3,7 @@ const education = [
     id: 1,
     institution: "Polytech Nice-Sophia",
     degree: "Graduate University degree in Engineering",
-    year: "2023-2024",
+    year: "2023-2026",
     skills: [
       "Github",
       "Java",
@@ -19,12 +19,32 @@ const education = [
       "CI/CD",
       "Networks",
     ],
-    specials: ["Profesionnal English Level (TOEIC 915)"],
-    specialsWithImage: [],
+    specials: ["Profesionnal English Level (TOEIC 935)"],
+    specialsWithImage: [
+      {
+        title:
+          "3-month Internship at Da Nang International Institute of Technology (Danang, Vietnam)",
+        description:
+          "Development of a web application that visualizes potential flood risks in Da Nang using a heatmap. The system maps out critical areas by processing and analyzing data collected from existing antennas.",
+        srcImage:
+          "https://www.udn.vn/Portals/1/EasyDNNNews/20572/150150p2204EDNthumbimg-dnnit-logo.png",
+        link: "https://www.udn.vn/english",
+      },
+      {
+        title:
+          "2-year Apprenticeship at Amadeus (Sophia Antipolis, France)",
+        description:
+          "I developed a custom mocking tool for E2E tests and built a configuration app to modify useful properties for the apps. Additionally, I resolved diverse backlog tasks, delivering bug fixes, UI enhancements, security hardening, and performance optimizations.",
+        srcImage:
+          "https://www.tourmag.com/photo/art/grande/8334013-13054962.jpg?v=1444214835",
+        link: "https://amadeus.com/",
+      }
+    ],
     srcImage:
       "https://upload.wikimedia.org/wikipedia/commons/f/f0/Logo_Reseau_Polytech.svg",
     link: "https://polytech.univ-cotedazur.fr/",
   },
+
   {
     id: 2,
     institution: "IUT de Nice Fabron",
